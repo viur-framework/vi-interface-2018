@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<!-- meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Favicon -->
+	<link rel="icon" href="static/images/favicon.png" type="image/png"/>
+	<link rel="stylesheet" href="../static/css/style.css"/>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+    
+<article class="wrap">
+    <div class="bind">
+		<div class="content">
+			<form class="viurForm">
+				<fieldset class="vf-set vf-set-vAllgemein is-inactive" name="Allgemein">
+					<legend class="vf-legend">Allgemein</legend>
+
+					<section class="vf-section">
+
+						<div class="vf-bone vf-stringBone vf-stringBone-vName ">
+							<label class="vf-label vf-stringLabel vf-stringLabel-vName is-required" for="vi_0_db_produkt_edit_Allgemein_bn_name">Name</label>
+							<div class="vf-stringBone-trans" id="vi_0_db_produkt_edit_Allgemein_bn_name">
+								<div class="vf-stringBone-transInputs">
+									<input class="input" type="text" class="lang_de">
+									<input class="input" type="text" class="lang_en" style="display: none;">
+									<input class="input" type="text" class="lang_fr" style="display: none;">
+									<input class="input" type="text" class="lang_it" style="display: none;">
+									<input class="input" type="text" class="lang_ru" style="display: none;">
+									<input class="input" type="text" class="lang_no" style="display: none;">
+									<input class="input" type="text" class="lang_se" style="display: none;">
+									<input class="input" type="text" class="lang_dk" style="display: none;">
+									<input class="input" type="text" class="lang_nl" style="display: none;">
+								</div>
+								<div class="btnGroup btnGroup-vLanguages">
+									<button class="btn is-active" type="button">de</button>
+									<button class="btn" type="button">en</button>
+									<button class="btn" type="button">fr</button>
+									<button class="btn is-translated" type="button">it</button>
+									<button class="btn" type="button">ru</button>
+									<button class="btn" type="button">no</button>
+									<button class="btn" type="button">se</button>
+									<button class="btn" type="button">dk</button>
+									<button class="btn" type="button">nl</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="vf-bone vf-textBone vf-textBone-vDescr">
+							<label class="vf-label vf-textLabel vf-textLabel-vDescr" for="vi_0_db_produkt_edit_Allgemein_bn_descr">Beschreibung</label>
+							<div class="vf-textBone-trans" id="vi_0_db_produkt_edit_Allgemein_bn_descr">
+								<div class="btnGroup btnGroup-vLanguages">
+									<button class="btn is-active" type="button" value="de">de</button>
+									<button class="btn" type="button" value="en">en</button>
+									<button class="btn is-translated" type="button" value="fr">fr</button>
+									<button class="btn" type="button" value="it">it</button>
+									<button class="btn" type="button" value="ru">ru</button>
+									<button class="btn" type="button" value="no">no</button>
+									<button class="btn" type="button" value="se">se</button>
+									<button class="btn" type="button" value="dk">dk</button>
+									<button class="btn" type="button" value="nl">nl</button>
+								</div>
+								<textarea style="display: none;"></textarea>
+								<div class="vf-textBone-preview">
+								</div>
+								<button class="btn textedit icon" type="button">Text bearbeiten</button>
+							</div>
+						</div>
+
+						<div class="vf-bone vf-fileBone vf-fileBone-vImage">
+							<label class="vf-label vf-fileLabel vf-fileLabel-vImage" for="vi_0_db_produkt_edit_Allgemein_bn_image">Bild</label>
+							<div class="can-upload" id="vi_0_db_produkt_edit_Allgemein_bn_image">
+								<div class="inputGroup">
+									<input class="input is-readonly" type="text" readonly="">
+									<button class="btn icon select" type="button">Auswählen</button>
+									<button class="btn icon edit" type="button">Bearbeiten</button>
+								</div>
+								<button class="btn icon cancel" type="button">Entfernen</button>
+								<div class="vf-fileBone-previewImg"
+									 style="background-image: url(https://lh3.googleusercontent.com/TQFr6JDH1tKAHO0fl80hFTCYwooKAuxdxe0wb6kYVadC3vvwQACAVy63p4y47VzEb86vNfKwp7pjBgm-MnwwkxLX=s150)">
+								</div>
+								<div class="vf-dropzone">
+								</div>
+							</div>
+						</div>
+
+						<div class="vf-bone vf-fileMultiBone vf-fileMultiBone-vImages">
+							<label class="vf-label vf-fileMultiLabel vf-fileMultiLabel-vImages" for="vi_0_db_produkt_edit_Allgemein_bn_images">Feature-Bilder</label>
+							<div class="can-upload" id="vi_0_db_produkt_edit_Allgemein_bn_images">
+								<div class="vf-fileMultiBone-selection">
+									<div class="vf-fileMultiBone-item">
+										<div class="vf-fileMultiBone-previewImg"
+											 style="background-image: url(https://lh3.ggpht.com/_DxEjeyW0oiWYfHUg7g6GIJei67Vqd8B_y-kXOV9tdcTOig-6ON3WLRIGSud51hMp3Crq2BprU9XXi3I4xNiLSCM=s150)">
+										</div>
+										<div class="inputGroup">
+											<span class="input is-readonly">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+											<button class="btn icon edit" type="button">Edit</button>
+										</div>
+										<button class="btn icon cancel" type="button">Remove</button>
+									</div>
+								</div>
+								<button class="btn icon select" type="button">Auswählen</button>
+							</div>
+						</div>
+
+						<div class="vf-bone vf-selectOneBone vf-selectOneBone-vKauftenauch">
+							<label class="vf-label vf-selectOneLabel vf-selectOneLabel-vKauftenauch" for="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">In "Kauften auch" anzeigen?</label>
+							<select class="select" name="kauftenauch" id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+								<option value="0">Nein</option>
+								<option value="1">Ja</option>
+							</select>
+						</div>
+
+						<div class="vf-bone vf-selectMultiBone vf-selectMultiBone-vBeschichtung">
+							<label class="vf-label vf-selectMultiLabel vf-selectMultiLabel-vBeschichtung" for="vi_0_db_produkt_edit_Details_bn_beschichtung">Beschichtung</label>
+							<div id="vi_0_db_produkt_edit_Details_bn_beschichtung">
+								<label>
+									<input class="checkbox" type="checkbox" name="0">
+									<span>Nein</span>
+								</label>
+								<label>
+									<input class="checkbox" type="checkbox" name="1">
+									<span>Ja</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="vf-bone vf-relationalBone relational_serie relational is-related-serie">
+							<label class="vf-label vf-relationalLabel vf-relationalLabel-vSerie" for="vi_0_db_produkt_edit_Allgemein_bn_serie">gehört zur Serie</label>
+							<div id="vi_0_db_produkt_edit_Allgemein_bn_serie">
+									<input type="text" readonly="">
+									<button class="btn icon select" type="button">Auswählen</button>
+									<button class="btn icon edit" type="button">Bearbeiten</button>
+									<button class="btn icon cancel" type="button">Entfernen</button>
+							</div>
+						</div>
+
+						<div class="vf-bone vf-relationalMultiBone vf-relationalMultiBone-vWeitere is-related-produkt">
+							<label class="vf-label vf-relationalMultiLabel vf-relationalMultiLabel-vWeitere" for="vi_0_db_produkt_edit_Allgemein_bn_weitere">ähnliche Produkte</label>
+							<div id="vi_0_db_produkt_edit_Allgemein_bn_weitere">
+								<div class="selectioncontainer">
+									<div><span class="entrydescription">Badewannenfaltwand, 3-teilig, D1410</span>
+										<button class="btn icon edit" type="button">Edit</button>
+										<button class="btn icon cancel" type="button">Remove</button>
+									</div>
+									<div><span class="entrydescription">Badewannenfaltwand, 3-teilig D1420</span>
+										<button class="btn icon edit" type="button">Edit</button>
+										<button class="btn icon cancel" type="button">Remove</button>
+									</div>
+									<div><span
+											class="entrydescription">Badewannenfaltwand, 3-teilig mit Seitenwand</span>
+										<button class="btn icon edit" type="button">Edit</button>
+										<button class="btn icon cancel" type="button">Remove</button>
+									</div>
+								</div>
+								<button class="btn icon select" type="button">Auswählen</button>
+							</div>
+						</div>
+
+					</section>
+				</fieldset>
+
+			</form>
+		</div>
+	</div>
+</article>
+    
+</body>
+</html>

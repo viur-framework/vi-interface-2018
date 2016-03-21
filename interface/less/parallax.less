@@ -1,14 +1,17 @@
 @charset "UTF-8";
 /* ---------------------------------------------------------------------------------------
-    #PARALLAX EFFECT BOX
+    #PARALLAX EFFECT WRAPPER
 --------------------------------------------------------------------------------------- */
 
-// The parallax effect box is … #FIXME (introduction, different ratios (http://codepen.io/necolas/pen/Aksni) and parallax.html)
+// The parallax effect wrapper makes it easy to use screen wide images with the well known scroll effect.
+// Attach a variant to achieve better fitting for different screen ratios (3:1, 2:1, 16:9, 4:3).
+
+// Thanks and shoutouts to: http://codepen.io/necolas/pen/Aksni
 
 .parallax {
   max-height: 400px;
   width: 100%;
-  background-image: url('../images/test.jpg');
+  background-image: url('../images/placeholder-parallax.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -17,14 +20,27 @@
     content: "";
     display: block;
     width: 100%;
+    padding-bottom: 100%;
+  }
+  &.parallax-v3by1:before {
+    padding-bottom: 33.33333%; /* image in 3:1 ratio. */
+  }
+  &.parallax-v2by1:before {
     padding-bottom: 50%; /* image in 2:1 ratio. */
+  }
+  &.parallax-v16by9:before {
+    padding-bottom: 56.25%; /* image in 16:9 ratio. */
+  }
+  &.parallax-v4by3:before {
+    padding-bottom: 75%; /* image in 4:3 ratio. */
   }
 }
 
+.parallax-v2by1 {max-height:420px;}
+.parallax-v16by9 {max-height:440px;}
+.parallax-v4by3 {max-height:460px;}
 
-
-
-// => Tooltip Media Queries
+// => Parallax Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
   .parallax {

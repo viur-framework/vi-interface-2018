@@ -69,6 +69,35 @@
 
 .tableFoot {}
 
+
+.table {
+    font-size: 1.1em;
+    background-color: #fff;
+}
+
+.table-tr-head {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.table-th {
+    border: 1px solid #e6e6e6;
+    padding: 12px 10px;
+    font-weight: bold;
+}
+
+.table-td {
+    border: 1px solid #e6e6e6;
+    padding: 7px 10px;
+}
+
+.table-tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+
+
+
+
 // => Tables Media Queries
 
 .media-mixin(@break) when (@break = @breakSmall) {
