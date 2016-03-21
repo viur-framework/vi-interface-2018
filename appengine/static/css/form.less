@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+/* ------------------------------------------------------------------------------------------------------
+    #FORM PARTS
+------------------------------------------------------------------------------------------------------ */
+
+@inputValidColor: @successColor;
+@inputDangerColor: @failColor;
+@inputHintColor: @hintColor;
+
+@inputColor: #ffffff;
+@inputShadow: 1px 1px 1px rgba(0,0,0,0.4);
+@inputHoverShadow: @defaultShadow;
+
+.input {
+    padding: 7px 14px;
+    margin: 6px;
+    width: 250px;
+    background-color: @inputColor;
+    border: 1px solid darken(@inputColor,10%);
+    color:contrast(@inputColor, #222222, #f4f4f4);
+    vertical-align: middle;
+    display: inline-block;
+    transition: all .3s ease;
+    &:focus {
+      box-shadow: @inputHoverShadow;
+    }
+}
+
+/* placeholder text color */
+.input::-webkit-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input:-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input::-moz-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+.input:-ms-input-placeholder {color:lighten(contrast(@inputColor, #222222, #f4f4f4), 50%); opacity: 1;}
+
+// disabled input
+// required input
+// labels for inputs
+// readonly inputs
+
+.input-vContrast {
+    background-color: darken(@inputColor,5%);
+    border: 1px solid darken(@inputColor,15%);
+    color:contrast(darken(@inputColor,5%), #000000, #ffffff);
+}
+
+.input-vSmall {
+    width: 180px;
+    padding: 3px 7px;
+    font-size: .8em;
+    font-weight: 400;
+}
+
+.input-vLarge {
+    padding: 8px 11.5px;
+    font-size: 1.25em;
+    width: 280px;
+}
+
+.input-vBlock {
+    width: 100%;
+    margin: 0;
+}
+
+.input.is-invalid {
+    border-color: @inputDangerColor;
+    background-color: lighten(@inputDangerColor, 50%);
+}
+
+.input.is-recommended {
+    border-color: @inputHintColor;
+    background-color: lighten(@inputHintColor, 30%);
+}
+
+.input.is-valid {
+    border-color: @inputValidColor;
+    background-color: lighten(@inputValidColor, 50%);
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0px;
+    padding: 9px 20px;
+    padding-right: 38px;
+    margin: 6px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    .arrowsUpDownBg(); //import from images.less: arrows (up and down) in base64
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    transition: all .3s ease;
+    &:hover {
+      box-shadow: @inputHoverShadow;
+    }
+    &.select-vSmall {
+      padding: 3px 7px;
+      font-size: .8em;
+      font-weight: 400;
+      background-size: 10px;
+    }
+}
+
+.inputGroup {
+    display: block;
+    margin: 0 6px;
+}
+
+.inputGroup .input,
+.inputGroup .btn,
+.inputGroup .select {
+    margin: 6px 0px;
+    float: left;
+    position: relative;
+}
+
+.inputGroup .input {
+    box-shadow: @inputShadow;
+}
+
+.inputGroup .btn {
+    margin-left: -1px;
+}
+
+.checkbox {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.note {
+    font-size: 0.8em;
+    margin: 0;
+    padding-left: 22px;
+}
+
+// => form Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+
+}
