@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------
+    BASICS, FUNDAMENTALS and TYPE
+--------------------------------------------------------------------------------------- */
+
+body {
+  margin: 0; /* IE Reset */
+  background: @backgroundColor;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size:100.01%;
+  line-height:1.5;
+  color: @textColor;
+  font-family: @bodyFonts;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Links */
+a, a:link, a:visited { color: @mainColor; text-decoration: none; outline: 0; }
+a:hover, a:focus, a:active { color: darken(@mainColor, 30%); }
+p a, p a:visited { line-height: inherit; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {font-family: @headFonts; font-weight: normal; font-size: 1.2em; line-height: 1.6;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit; color: inherit;}
+
+h1 {margin: 16px 0; color: @mainColor; font-size:2.1em;border-bottom: 1px solid #eeeeee;} // #FIXME! Borders and margins should be styled in project specific objects.
+h2 {margin: 16px 0; color: @mainColor; font-size:1.7em;border-bottom: 1px solid #eeeeee;} // #FIXME! Borders and margins should be styled in project specific objects.
+h3 {color: @mainColor; font-size:1.5em;}
+h4 {}
+h5 {}
+h6 {}
+    
+p {
+  line-height: 1.6;
+  font-size: 1em;
+}
+
+em {font-style:italic;}
+blockquote {
+  font-family: @headFonts;
+  color: #828282;
+  padding: 0 15px;
+  border-left: 7px solid #d1d1d1;
+}
+
+code, pre {font-family: @monoFonts;}
+
+/* Lists */
+ul, .ul-vFirst {
+    padding:0;
+    margin:0;
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.ul-vSecond {
+    padding: 3px 18px;
+    list-style-type: square;
+}
+
+.ul-vThird {
+    padding: 3px 18px;
+    list-style-type: circle;
+}
+
+ol, .ol-vFirst {
+    padding:0;
+    margin:0;
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.ol-vSecond {
+    padding: 3px 18px;
+    list-style-type: upper-roman;
+}
+
+.ol-vThird {
+    padding: 3px 18px;
+    list-style-type: upper-alpha;
+}
+
+// => Basic Media Queries
+
+.media-mixin(@break) when (@break = @breakSmall) {
+  body {font-size: 90%;}
+}
+
+.media-mixin(@break) when (@break = @breakMedium) {
+
+}
+
+.media-mixin(@break) when (@break = @breakLarge) {
+
+}
+
+.media-mixin(@break) when (@break = @break2x) {
+
+}
+
+.media-mixin(@break) when (@break = @breakPrint) {
+
+}

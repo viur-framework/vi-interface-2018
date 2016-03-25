@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<!-- meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Favicon -->
+	<link rel="icon" href="../static/images/favicon.png" type="image/png"/>
+	<link rel="stylesheet" href="../static/css/hamburger.css"/>
+	<link rel="stylesheet" href="../static/css/style.css"/>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+</head>
+<body style="overflow: hidden;">
+    
+<script>
+    
+    $(document).ready(function() {
+        $(".hamburger").click(function() {
+            $(".hamburger").toggleClass("is-active");
+            $(".sidebar2").toggleClass("is-active");
+            $(".sidebar-ul-li-text").toggleClass("is-not-animated");
+            $(".sidebar-ul-li-text").toggleClass("is-animated");
+            });
+    });
+    
+    $(document).ready(function() {
+        $(".notification").click(function() {
+            $(".details").toggleClass("is-active");
+            });
+    });
+    
+</script>
+
+<header class="nav">
+    <div class="nav-wrap">
+        <div class="nav-menu-left-wrap">
+            <button class="hamburger hamburger--collapse" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>  
+        </div>
+        <div class="nav-page-title">
+            SCHULTE.de<div class="path-icon">Dashboard</div>
+        </div>
+        <div class="nav-menu-right-wrap">
+            <div class="nav-menu-right-icon notification" id="notifi-is-open" style="background-image: url(../static/icons/list.svg)">
+            </div>
+            <div class="nav-menu-right-icon" style="background-image: url(../static/icons/settings.svg)"></div>
+            <div class="nav-menu-right-icon" style="background-image: url(../static/icons/logout.svg)"></div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<div id="coreWindow" class="coreWindow">
+<div class="" style="display:flex;">
+    
+    <div class="sidebar2">
+        <div class="sidebar-wrap">
+            <ul class="sidebar-ul">
+                <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/dashboard.svg)"></div><div class="sidebar-ul-li-text is-animated">Dashboard</div></li>
+                <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/data-system.svg)"></div><div class="sidebar-ul-li-text is-animated">Dateisystem</div></li>
+                <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/user.svg)"></div><div class="sidebar-ul-li-text is-animated">User</div></li>
+                <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/statistics.svg)"></div><div class="sidebar-ul-li-text is-animated">Statistiken</div></li>
+                <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/press.svg)"></div><div class="sidebar-ul-li-text is-animated">Presse</div></li>
+                <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/archive.svg)"></div><div class="sidebar-ul-li-text is-animated">Archiv</div></li>
+            </ul>
+        </div>
+    </div>
+    
+	<div class="" style="flex:2.5 .8 30%; height:100vh; background:#f5f5f5;">
+	    <div class="" style="width:100%; height:100%; display: flex; flex-direction: column;">
+		    <div class="actionBar subheader" style="">
+        <div class="sec-nav-icon-wrap">
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/settings.svg)"></div>
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/settings.svg)"></div>
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/settings.svg)"></div>
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/drop-down.svg)"></div>
+        </div>
+                
+		    </div>
+            <div class="" style="overflow: hidden; overflow-y: scroll; width:100%; flex:1 1 100%;">
+                <div class="" style="width:100%; height:200vh;">
+                    test
+                </div>
+            </div>
+        </div>
+</div>
+    <div class="details">
+                        
+        <div class="nav-menu-right-notifi-content-list">
+            <div class="nav-menu-right-notifi-content-list-title">
+                Titel
+            </div>
+            <div class="nav-menu-right-notifi-content-list-desc">
+                Dies ist eine sehr lange Beschreibung um diesen Effekt zu demonstrieren.
+            </div>
+        </div>     
+        <div class="nav-menu-right-notifi-content-list">
+            <div class="nav-menu-right-notifi-content-list-title">
+                Titel
+            </div>
+            <div class="nav-menu-right-notifi-content-list-desc">
+                Dies ist eine sehr lange Beschreibung um diesen Effekt zu demonstrieren.
+            </div>
+        </div>     
+        <div class="nav-menu-right-notifi-content-list">
+            <div class="nav-menu-right-notifi-content-list-title">
+                Titel
+            </div>
+            <div class="nav-menu-right-notifi-content-list-desc">
+                Dies ist eine sehr lange Beschreibung um diesen Effekt zu demonstrieren.
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+</div>
+
+
+
+
+<div class="sidebar" style="display:none;">
+    <div class="sidebar-wrap">
+        <ul class="sidebar-ul">
+            <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/dashboard.svg)"></div><div class="sidebar-ul-li-text is-animated">Dashboard</div></li>
+            <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/data-system.svg)"></div><div class="sidebar-ul-li-text is-animated">Dateisystem</div></li>
+            <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/user.svg)"></div><div class="sidebar-ul-li-text is-animated">User</div></li>
+            <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/statistics.svg)"></div><div class="sidebar-ul-li-text is-animated">Statistiken</div></li>
+            <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/press.svg)"></div><div class="sidebar-ul-li-text is-animated">Presse</div></li>
+            <li class="sidebar-ul-li"><div class="sidebar-ul-li-icon" style="background-image: url(../static/icons/archive.svg)"></div><div class="sidebar-ul-li-text is-animated">Archiv</div></li>
+        </ul>
+    </div>
+</div>
+
+<div class="sec-nav-wrap" style="display:none;">
+    <div class="sec-nav">
+        <div class="sec-nav-title">
+            Neues von X
+        </div>
+        <div class="sec-nav-icon-wrap">
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/settings.svg)"></div>
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/settings.svg)"></div>
+            <div class="sec-nav-icon" style="background-image: url(../static/icons/drop-down.svg)"></div>
+        </div>
+    </div>
+</div>
+
+<div class="placeholder"></div>
+
+<article>
+    <section class="page">
+        
+    </section>
+</article>
+
+    
+</body>
+</html>
