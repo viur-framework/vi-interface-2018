@@ -6,7 +6,7 @@
   position: fixed;
   height: 70px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   z-index: 100;
 }
@@ -29,7 +29,9 @@
   background-size: 26px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #000;
+}
+.nav-menu-right-icon:hover {
+  opacity: .7;
 }
 .nav-menu-right-wrap div.nav-menu-right-icon:last-of-type {
   margin-right: 20px;
@@ -45,95 +47,78 @@
   font-size: 1.8em;
   font-weight: bold;
 }
-.nav-menu-right-notifi {
-  cursor: default;
-  position: absolute;
-  top: 0px;
-  right: 20px;
-  opacity: 0;
-  height: 0;
-  width: 305px;
-  overflow: hidden;
-  transition: all .4s ease;
+.notifi {
+  padding-top: 70px;
+  transition: all .3s ease;
+  flex: 0 1 0;
+  height: 100vh;
+  background: #fcfcfc;
+  border-left: 1px solid #ddd;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
-#notifi-is-open:hover .nav-menu-right-notifi {
+.notifi.is-active {
+  flex: 0 1 280px;
+}
+#notifi-is-open:hover .notifi {
   opacity: 1;
   height: 330px;
   width: 305px;
   padding-bottom: 50px;
 }
-.nav-menu-right-notifi-content {
-  margin: 0 auto;
-  background-color: #ffffff;
-  height: 270px;
-  width: 300px;
-  margin-top: 28px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  overflow-y: scroll;
-}
-.nav-menu-right-notifi-content-arrow {
-  position: absolute;
-  right: 76px;
-  top: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 21px 25px;
-  border-color: transparent transparent #ffffff transparent;
-  -webkit-filter: drop-shadow(0 -3.3px 3px rgba(0, 0, 0, 0.1));
-  filter: drop-shadow(0 -3.3px 3px rgba(0, 0, 0, 0.1));
-}
-.nav-menu-right-notifi-content-list {
+.notifi-content-list {
   cursor: pointer;
   height: 68px;
   padding: 10px 20px;
   border-bottom: 1px solid #f5f5f5;
+  padding-left: 60px;
 }
-.nav-menu-right-notifi-content-list:hover {
+.notifi-content-list:hover {
   background-color: #f5f5f5;
 }
-.nav-menu-right-notifi-content-list-title {
+.notifi-content-list::before {
+  content: "";
+  position: absolute;
+  margin-top: 14px;
+  margin-left: -39px;
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/icons/list.svg);
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.notifi-content-list-title {
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.nav-menu-right-notifi-content-list-desc {
+.notifi-content-list-desc {
   margin-top: -1px;
   font-size: 0.9em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.nav-menu-right-notifi-content-more {
-  cursor: pointer;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 0.8em;
-}
-.sec-nav-wrap {
+.subheader {
+  margin-top: 70px;
+  background: #eee;
   width: 100%;
-  position: fixed;
-  top: 70px;
-}
-.sec-nav {
-  margin: 0 auto;
-  width: 64%;
-  height: 60px;
-  background-color: #f8f8f8;
+  flex: 1 0 50px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
-.sec-nav-title {
+.subheader-title {
   font-size: 1.4em;
   padding: 16px 40px;
   font-weight: bold;
 }
-.sec-nav-icon-wrap {
+.subheader-icon-wrap {
   float: right;
   margin-top: 40px;
   margin-bottom: -15px;
 }
-.sec-nav-icon {
+.subheader-icon {
   cursor: pointer;
   display: inline-block;
   height: 30px;
@@ -147,25 +132,24 @@
   border: 1px solid #ccc;
   transition: all .3s ease;
 }
-.sec-nav-icon:hover {
+.subheader-icon:hover {
   background-color: rgba(0, 0, 0, 0.02);
 }
-.sec-nav-icon-wrap div.sec-nav-icon:last-of-type {
+.subheader-icon-wrap div.subheader-icon:last-of-type {
   margin-right: 20px;
 }
 .sidebar {
-  margin-left: -148px;
-  position: fixed;
-  width: 220px;
-  height: 100%;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 99;
-  overflow-y: scroll;
+  margin-top: 70px;
   transition: all .3s ease;
+  flex: 0 2 72px;
+  height: 100vh;
+  background: #fcfcfc;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .sidebar.is-active {
-  margin-left: 0;
+  flex: 0 2 230px;
 }
 .sidebar-wrap {
   padding-top: 15px;
@@ -194,7 +178,6 @@
   background-size: 28px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #000;
 }
 .sidebar-ul-li-text {
   display: inline-block;
@@ -211,55 +194,45 @@
 .sidebar-ul-li-text.is-animated {
   -webkit-animation-name: fadeInSidebar;
   -webkit-animation-duration: .04s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: fadeInSidebar;
+  -moz-animation-duration: .04s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: linear;
   animation-name: fadeInSidebar;
   animation-duration: .04s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+_:-webkit-full-screen:not(:root:root),
+.sidebar-ul-li-text.is-animated {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 @-webkit-keyframes fadeInSidebar {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeInSidebar {
+  0% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
   }
 }
 @keyframes fadeInSidebar {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  100% {
     opacity: 0;
   }
-}
-.sidebar2 {
-  margin-top: 70px;
-  transition: all .3s ease;
-  flex: 0 2 72px;
-  height: 100vh;
-  background: #fff;
-  overflow: hidden;
-  overflow-y: scroll;
-}
-.sidebar2.is-active {
-  flex: 0 2 230px;
-}
-.subheader {
-  margin-top: 70px;
-  background: #eee;
-  width: 100%;
-  flex: 1 0 40px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-}
-.details {
-  padding-top: 70px;
-  transition: all .3s ease;
-  flex: 0 1 0;
-  height: 100vh;
-  background: #fff;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-.details.is-active {
-  flex: 0 1 230px;
 }
 .hamburger-inner,
 .hamburger-inner::before,
@@ -277,7 +250,7 @@
   margin-left: -26px;
   width: 18px;
   height: 18px;
-  background-image: url(../img/next-icon.png);
+  background-image: url(../images/icons/next-icon.png);
   background-size: 10px;
   background-position: center center;
   background-repeat: no-repeat;
