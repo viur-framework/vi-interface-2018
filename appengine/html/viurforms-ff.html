@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<!-- meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Favicon -->
+	<link rel="icon" href="static/images/favicon.png" type="image/png"/>
+	<link rel="stylesheet" href="../static/css/style.css"/>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+	<style>
+		.vi-bone {
+			display: flex;
+		}
+
+		.vi-label {
+			min-width: 25%;
+			align-self: flex-start;
+			border-right-width: 0;
+		}
+
+		.vi-boneTranslator {
+			flex: 1;
+			display: flex;
+		}
+
+		.vi-boneEditor {
+			flex: 1;
+			display: flex;
+			min-width: 0;
+		}
+
+		.vi-selection {
+			display: flex;
+			min-width: 0;
+			flex: 1;
+			flex-direction: column;
+		}
+
+		.vi-relation {
+			display: flex;
+			flex: 1;
+		}
+
+		.vi-file {
+			display: flex;
+			min-width: 0;
+			flex: 1;
+		}
+
+		.select {
+			margin: 6px;
+		}
+
+		.vi-textarea {
+			flex: 1
+		}
+
+		.btn {
+			align-self: flex-start
+		}
+
+		.select {
+			align-self: flex-start
+		}
+
+		.input {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			min-width: 0;
+			flex: 1;
+		}
+
+		.master {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 100vh;
+		}
+
+		.headerwrap {
+			position: relative;
+			height: 50px;
+			width: 100%;
+			-webkit-box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
+			box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
+			background-color: #fff;
+			z-index: 50;
+			border-bottom: 2px solid #BE1622;
+		}
+
+		.headerwrap .btn {
+			margin: 0;
+			padding: 0 20px;
+			line-height: 48px;
+			float: right;
+		}
+
+		.contentmaster {
+
+			width: 100%;
+			display: flex;
+			height: 100vh;
+		}
+
+		.sidebarwrap {
+			width: 20%;
+			-webkit-box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
+			box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
+			z-index: 40;
+
+			overflow-y: scroll;
+			min-width: 300px;
+			height: 100vh;
+			padding-bottom: 60px;
+		}
+
+		.rightwrap {
+			width: 80%;
+
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			padding-bottom: 60px;
+
+		}
+
+		.contentwrap {
+			width: 100%;
+			overflow-y: scroll;
+			height: 100vh;
+		}
+
+		.aktionbar {
+			width: 100%;
+			padding: 5px 10px;
+			background-color: #f7f7f7;
+			-webkit-box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
+			box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
+			z-index: 30;
+
+		}
+
+		.iconnav {
+			position: relative;
+			font-size: .8em;
+			line-height: 2.4em;
+			float: right;
+		}
+
+		.iconnav li {
+			float: left;
+			color: #777;
+		}
+
+		.iconnav li button{
+			border: 0;
+			border-left: 1px solid #ccc;
+			border-bottom: 2px solid #BE1622;
+			color: #555;
+			position: relative;
+			padding: 0 7px;
+			line-height: 48px;
+			float: left;
+			text-decoration: none;
+			text-shadow: none;
+			-webkit-transition: all 0.6s ease;
+			-moz-transition: all 0.6s ease;
+			-o-transition: all 0.6s ease;
+			transition: all 0.6s ease;
+			-webkit-appearance: none;
+			background-color: #fff;
+			font-weight: 700;
+
+		}
+
+
+
+		.iconnav li.inactive button {
+			color: #444;
+		}
+
+
+		/* Icon Links */
+		.iconnav li button.has-icon {
+			color: transparent;
+			letter-spacing: -1em;
+			overflow: hidden;
+			min-width: 48px;
+		}
+
+		.iconnav li button:hover {
+			color: #555;
+			background-color: #f7f7f7;
+			text-decoration: none;
+			border-bottom: 2px solid #ff1122;
+		}
+
+		.iconnav li button.has-icon:before {
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			width: 48px;
+			height: 48px;
+			content: ' ';
+			position: relative;
+			float: left;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		/* Action Icons */
+		.iconnav li button.has-icon.dashboard:before {
+			background-position: 0px 0px;
+		}
+
+		.iconnav li button.has-icon.myfiles:before {
+			background-position: -32px 0px;
+		}
+
+		.iconnav li button.has-icon.accountmgnt:before {
+			background-image: url('../static/icons/actions/nav-accountmgnt.svg');
+		}
+		.iconnav li button.has-icon.logout:before {
+			background-image: url('../static/icons/actions/nav-logout.svg');
+		}
+
+		.iconnav li button.has-icon.tasks:before {
+			background-image: url('../static/icons/actions/nav-tasks.svg');
+		}
+
+
+		.iconnav li button.has-icon:hover {
+			overflow: visible;
+			min-width: 130px;
+			letter-spacing: normal;
+		}
+
+
+
+
+
+	</style>
+
+</head>
+
+
+<body>
+
+<div class="master">
+
+	<div class="headerwrap">
+
+		<nav class="iconnav">
+			<ul>
+				<li>
+					<button class="has-icon tasks">TASKS</button>
+				</li>
+				<li>
+					<button title="admin@oase-viur.appspot.com" class="has-icon accountmgnt">admin@oase-viur.appspot.com
+					</button>
+				</li>
+				<li>
+					<button class="has-icon logout">Abmelden</button>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<div class="contentmaster">
+		<div class="sidebarwrap">
+
+
+			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
+			<br/>affe <br/>
+			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>
+
+			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
+			<br/>affe <br/>
+			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>
+
+			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
+			<br/>affe <br/>
+			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>
+
+
+		</div>
+
+
+		<div class="rightwrap">
+
+			<div class="aktionbar">
+				Ich bin die Aktionabr - SWAG
+			</div>
+
+			<div class="contentwrap">
+
+				<article class="wrap">
+					<div class="bind">
+						<div class="content">
+							<form class="viurForm">
+								<fieldset class="vi-set vi-set-vAllgemein is-inactive" name="Allgemein">
+									<legend class="vi-legend">Allgemein</legend>
+
+									<section class="vi-section">
+
+										<div class="vi-bone vi-stringBone vi-stringBone-vName">
+											<label class="label vi-label vi-stringLabel vi-stringLabel-vName is-required"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_name">Name</label>
+											<div class="vi-boneTranslator" id="vi_0_db_produkt_edit_Allgemein_bn_name">
+												<div class="vi-boneEditor">
+													<input class="input" type="text" class="lang_de">
+													<input class="input" type="text" class="lang_en"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_fr"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_it"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_ru"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_no"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_se"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_dk"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_nl"
+														   style="display: none;">
+												</div>
+												<select class="select" name="kauftenauch"
+														id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+													<option value="0">de</option>
+													<option value="1">en</option>
+												</select>
+											</div>
+										</div>
+
+
+										affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
+										<br/>affe <br/>affe <br/>affe <br/>
+										affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
+										<br/>
+
+										<div class="vi-bone vi-textBone vi-textBone-vDescr">
+											<label class="label vi-label vi-textLabel vi-textLabel-vDescr"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_descr">Beschreibung</label>
+											<div class="vi-boneTranslator" id="vi_0_db_produkt_edit_Allgemein_bn_descr">
+												<div class="vi-boneEditor">
+													<textarea class="textarea vi-textarea"
+															  style="display: none;"></textarea>
+													<div class="textarea vi-textarea vi-textBone-preview">
+													</div>
+													<button class="btn textedit icon btn-vEdit" type="button">Text
+														bearbeiten
+													</button>
+												</div>
+												<select class="select" name="kauftenauch"
+														id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+													<option value="0">de</option>
+													<option value="1">en</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-fileBone vi-fileBone-vImage">
+											<label class="label vi-label vi-fileLabel vi-fileLabel-vImage"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_image">Bild</label>
+											<div class="vi-boneEditor can-upload"
+												 id="vi_0_db_produkt_edit_Allgemein_bn_image">
+												<div class="vi-file inputGroup">
+													<div class="vi-fileBone-previewImg"
+														 style="background-image: url(https://lh3.googleusercontent.com/TQFr6JDH1tKAHO0fl80hFTCYwooKAuxdxe0wb6kYVadC3vvwQACAVy63p4y47VzEb86vNfKwp7pjBgm-MnwwkxLX=s150)">
+													</div>
+													<span class="input is-readonly">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+													<button class="btn icon edit is-disabled" type="button">Bearbeiten
+													</button>
+													<button class="btn icon cancel btn-vDanger is-disabled"
+															type="button">Entfernen
+													</button>
+												</div>
+												<button class="btn has-icon i-select" type="button">Auswählen</button>
+												<div class="vi-dropzone">
+												</div>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-fileMultiBone vi-fileMultiBone-vImages">
+											<label class="label vi-label vi-fileMultiLabel vi-fileMultiLabel-vImages"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_images">Feature-Bilder</label>
+											<div class="vi-boneEditor can-upload"
+												 id="vi_0_db_produkt_edit_Allgemein_bn_images">
+												<div class="vi-selection">
+													<div class="vi-file inputGroup">
+														<div class="vi-fileMultiBone-previewImg"
+															 style="background-image: url(https://lh3.ggpht.com/_DxEjeyW0oiWYfHUg7g6GIJei67Vqd8B_y-kXOV9tdcTOig-6ON3WLRIGSud51hMp3Crq2BprU9XXi3I4xNiLSCM=s150)">
+														</div>
+														<span class="input is-readonly">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+														<button class="btn icon edit is-disabled" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn icon cancel btn-vDanger is-disabled"
+																type="button">Entfernen
+														</button>
+													</div>
+												</div>
+												<button class="btn has-icon i-select" type="button">Auswählen</button>
+												<div class="vi-dropzone">
+												</div>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-selectOneBone vi-selectOneBone-vKauftenauch">
+											<label class="label vi-label vi-selectOneLabel vi-selectOneLabel-vKauftenauch"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">In "Kauften auch"
+												anzeigen?</label>
+											<div class="vi-boneEditor inputGroup">
+												<select class="select" name="kauftenauch"
+														id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+													<option value="0">Nein</option>
+													<option value="1">Ja</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-selectMultiBone vi-selectMultiBone-vBeschichtung">
+											<label class="label vi-label vi-selectMultiLabel vi-selectMultiLabel-vBeschichtung"
+												   for="vi_0_db_produkt_edit_Details_bn_beschichtung">Beschichtung</label>
+											<div id="vi_0_db_produkt_edit_Details_bn_beschichtung"
+												 class="vi-boneEditor inputGroup">
+												<div class="radio">
+													<input id="check0" class="radio-input" type="radio" name="radio1">
+													<label for="check0" class="radio-label">Nein</label>
+												</div>
+												<div class="radio">
+													<input id="check1" class="radio-input" type="radio" name="radio1">
+													<label for="check1" class="radio-label">Ja</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-relationalBone relational_serie relational is-related-serie">
+											<label class="label vi-label vi-relationalLabel vi-relationalLabel-vSerie"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_serie">gehört zur
+												Serie</label>
+											<div class="vi-boneEditor" id="vi_0_db_produkt_edit_Allgemein_bn_serie">
+												<div class="vi-relation inputGroup">
+													<input class="input" type="text" readonly="">
+													<button class="btn btn-vEdit has-icon i-edit" type="button">
+														Bearbeiten
+													</button>
+													<button class="btn btn-vDanger has-icon i-cancel" type="button">
+														Entfernen
+													</button>
+												</div>
+												<button class="btn btn-vPrimary has-icon i-select" type="button">
+													Auswählen
+												</button>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-relationalMultiBone vi-relationalMultiBone-vWeitere is-related-produkt">
+											<label class="label vi-label vi-relationalMultiLabel vi-relationalMultiLabel-vWeitere"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_weitere">ähnliche
+												Produkte</label>
+											<div class="vi-boneEditor" id="vi_0_db_produkt_edit_Allgemein_bn_weitere">
+												<div class="vi-selection">
+													<div class="vi-relation inputGroup">
+														<span class="input is-readonly">Badewannenfaltwand, 3-teilig, D1410</span>
+														<button class="btn btn-vEdit has-icon i-edit" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn btn-vDanger has-icon i-cancel" type="button">
+															Entfernen
+														</button>
+													</div>
+													<div class="vi-relation inputGroup">
+														<span class="input is-readonly">Badewannenfaltwand, 3-teilig D1420</span>
+														<button class="btn btn-vEdit has-icon i-edit" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn btn-vDanger has-icon i-cancel" type="button">
+															Entfernen
+														</button>
+													</div>
+													<div class="vi-relation inputGroup">
+														<span class="input is-readonly">Badewannenfaltwand, 3-teilig mit Seitenwand</span>
+														<button class="btn btn-vEdit has-icon i-edit" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn btn-vDanger has-icon i-cancel" type="button">
+															Entfernen
+														</button>
+													</div>
+												</div>
+												<button class="btn btn-vPrimary has-icon i-select" type="button">
+													Auswählen
+												</button>
+											</div>
+										</div>
+
+									</section>
+								</fieldset>
+
+							</form>
+						</div>
+					</div>
+				</article>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
