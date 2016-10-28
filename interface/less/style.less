@@ -1,54 +1,56 @@
 @charset "UTF-8";
 
-/* ViCSS 2016 */
+/**
+ * ViUR Ignite CSS 2016
+ *
+ * This is the master file.
+ * It imports all less files in their intended order for easy mass-inclusion.
+ * Should you need specific files, you can easily customize the imports.
+ */
+
 
 // Reset
-@import "reset.less";
+@import "reset"; // resets all browsers to the same base state.
 
 // Fundamental parts, Type and Utilities
-@import "basic.less"; // classic basic styling.
-@import "wrap.less"; // page wrappers.
-@import "util.less"; // utility classes.
+@import "basic"; // classic basic styling.
+@import "wrap"; // page wrappers.
+@import "util"; // utility classes.
 
 // Buttons, Forms and Tables
-@import "button.less";
-@import "form.less";
-@import "table.less";
+@import "button"; // some classic buttons.
+@import "form"; // inputs, selects and other form elements.
+@import "table"; // a classic table layout.
 
-// Tooltips, Messages and States  
-@import "tooltip.less";
-@import "message.less";
-@import "state.less";
+// Tooltips, Messages and States
+@import "tooltip"; // lightweight tooltips.
+@import "badge"; // badges and marker.
+@import "message"; // hints, errors, warnings etc.
+@import "state"; // is-, has-, no- etc.
+@import "popup";
+@import "footnote";
+@import "spinner"; // loading state for ajax request
 
 // Objects
-@import "project.less"; // customize your CSS here.
-@import "parallax.less";
+@import "menu";
+@import "grid";
+@import "boxes"; // media element
+@import "progress";
+@import "tabs";
+@import "breadcrumb";
+@import "slider";
+@import "key";
+@import "bar";
+@import "pagination";
 
 // Configuration and Mixins
-@import "appconf.less"; // customize colors and fonts here.
-@import "images.less"; // base64 encoded imagery.
-@import "zindex.less"; // organize your z-indexes.
+@import "appconf"; // customize colors and fonts here.
+@import "image"; // base64 encoded images, image shapes and thumbnail
+@import (optional) "../../../sources/less/icon"; // ViUR SVG icons.
+@import "zindex"; // organize your z-indexes.
 
+// Project
+@import (optional) "../../../sources/less/style"; // Include Project
 
-/* Media Queries */
-@media only screen and (max-width: @breakLarge) {
-  .media-mixin(@breakLarge);
-}
-
-@media only screen and (max-width: @breakMedium) {
-  .media-mixin(@breakMedium);
-}
-
-@media only screen and (max-width: @breakSmall) {
-  .media-mixin(@breakSmall);
-}
-
-@media  only screen and (min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi) {
-  .media-mixin(@break2x);
-}
-
-/* Print */
-@media @breakPrint {
-  .media-mixin(@breakPrint);
-}
+// Media Queries
+@import "mediaqueries"; // really simple media queries.

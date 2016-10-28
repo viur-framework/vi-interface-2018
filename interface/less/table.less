@@ -1,11 +1,12 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-    #TABLES
---------------------------------------------------------------------------------------- */
+/**
+ * TABLES
+ */
+
 
 @tableHeadBackgroundColor:@mainColor;
-@tableRowBackgroundColor:#e5e5e5;
-@tableCellTextColor:@textColor;
+@tableRowBackgroundColor:#fefefe;
+
 
 .table {
   table-layout: fixed;
@@ -14,108 +15,84 @@
   width: 100%;
   margin: 0 0 15px;
   padding: 0;
-  font-size: .7rem; // 70% of body text.
+  font-size: .8rem; // 80% of body text.
+  .shd;
 }
 
 .tableHead {}
-.tableHead-row {}
-.tableHead-cell {
+.tableHead-row {
   background-color:@tableHeadBackgroundColor;
-  border:0px solid #eee;
-  border-width:0px 0px 1px 1px;
+  &:hover {background-color:lighten(@tableHeadBackgroundColor, 10%);}
+}
+.tableHead-cell {
+  border:0px solid darken(@tableHeadBackgroundColor,15%);
+  border-width: 1px 1px 1px 0;
   font-weight:bold;
   color:lighten(contrast(@tableHeadBackgroundColor),5%);
   text-align:center;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 2px 5px;
-  &:first-of-type {border-width:0px 0px 1px 0px;}
-  &:last-of-type {border-width:0px 0px 1px 1px;}
-  .tableHead-row:hover & {background-color:lighten(@tableHeadBackgroundColor, 10%);}
+  padding: 4px 10px;
+  &:first-of-type {border-left-width: 1px !important;}
 }
 
 .tableBody {}
 .tableBody-row {
-  &:nth-of-type(even) {background-color:@tableRowBackgroundColor;}
-  &:nth-of-type(odd) {background-color:darken(@tableRowBackgroundColor, 5%);}
-  &:nth-of-type(even):hover {background-color:lighten(@tableRowBackgroundColor, 10%);}
-  &:nth-of-type(odd):hover {background-color:lighten(@tableRowBackgroundColor, 5%);}
-  &:nth-of-type(even).is-active {background-color:@successColor;}
-  &:nth-of-type(odd).is-active {background-color:darken(@successColor, 5%);}
-  &:nth-of-type(even).is-active:hover {background-color:lighten(@successColor, 10%);}
-  &:nth-of-type(odd).is-active:hover {background-color:lighten(@successColor, 5%);}
+  &:nth-of-type(even) {background-color:darken(@tableRowBackgroundColor, 2%);}
+  &:nth-of-type(odd) {background-color:darken(@tableRowBackgroundColor, 4%);}
+  &:nth-of-type(even):hover {background-color:lighten(@tableRowBackgroundColor, 6%);}
+  &:nth-of-type(odd):hover {background-color:lighten(@tableRowBackgroundColor, 6%);}
+  &:nth-of-type(even).is-active {background-color:darken(@successColor, 2%);}
+  &:nth-of-type(odd).is-active {background-color:darken(@successColor, 4%);}
+  &:nth-of-type(even).is-active:hover {background-color:lighten(@successColor, 6%);}
+  &:nth-of-type(odd).is-active:hover {background-color:lighten(@successColor, 6%);}
 }
 
 .tableBody-cell {
   vertical-align:middle;
-  border:1px solid #eee;
-  border-width:0px 1px 1px 0px;
-  text-align:left;
+  border:1px solid darken(@tableRowBackgroundColor,15%);
+  border-width: 0 1px 1px 0;
+  text-align: left;
   padding:5px 10px;
   font-weight:normal;
-  color:@tableCellTextColor;
+  color:contrast(@tableRowBackgroundColor);
   .tableBody-row.is-active & {color:contrast(@successColor);}
-  .tableBody-row:last-of-type & {border-width:0px 1px 0px 0px;}
-  .tableBody-row &:last-of-type {border-width:0px 0px 1px 0px;}
-  .tableBody-row:last-of-type &:last-of-type {border-width:0px 0px 0px 0px;}
+  .tableBody-row &:first-of-type {border-left-width: 1px;}
 }
 
 .tableLink {
   display:block;
   padding:8px;
-  color:@tableCellTextColor;
+  color:contrast(@tableRowBackgroundColor);
 }
 
 .tableFoot {}
 
-
-.table {
-    font-size: 1.1em;
-    background-color: #fff;
+.table-vNoborder {
+  .tableHead-cell,
+  .tableBody-cell {
+    border-width: 0;
+    &:last-of-type {border-right-width: 1px;}
+  }
+  .tableBody-row:last-of-type .tableBody-cell {border-bottom-width: 1px;}
+  .tableHead-row:first-of-type .tableHead-cell {border-top-width: 1px;}
+  .tableHead-row .tableHead-cell:first-of-type {border-left-width: 1px;}
 }
-
-.table-tr-head {
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+.table-vNoXborder {
+  .tableHead-cell,
+  .tableBody-cell {
+    border-top-width: 0;
+    border-bottom-width: 0;
+  }
+  .tableHead-row:first-of-type .tableHead-cell {border-top-width: 1px;}
+  .tableBody-row:last-of-type .tableBody-cell {border-bottom-width: 1px;}
 }
-
-.table-th {
-    border: 1px solid #e6e6e6;
-    padding: 12px 10px;
-    font-weight: bold;
-}
-
-.table-td {
-    border: 1px solid #e6e6e6;
-    padding: 7px 10px;
-}
-
-.table-tr:nth-child(odd) {
-    background-color: #f7f7f7;
-}
-
-
-
-
-
-// => Tables Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-
+.table-vNoYborder {
+  .tableHead-cell,
+  .tableBody-cell {
+    border-left-width: 0;
+    border-right-width: 0;
+    &:last-of-type {border-right-width: 1px;}
+  }
 }

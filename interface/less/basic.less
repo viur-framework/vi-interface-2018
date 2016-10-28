@@ -1,105 +1,199 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-    BASICS, FUNDAMENTALS and TYPE
---------------------------------------------------------------------------------------- */
+/**
+ * BASICS, FUNDAMENTALS and TYPE
+ *
+ * ViUR Ignite CSS supports the 100% Easy to read standard:
+ * https://ia.net/know-how/100e2r
+ *
+ * The body font size is 100% (roughly 16px).
+ * Objects use a font size based on this size: using »rem« (root em).
+ * Inline elements and type should react to their direct surroundings - thus use »em«.
+ */
 
-body {
-  margin: 0; /* IE Reset */
-  background: @backgroundColor;
+
+html {
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size:100.01%;
+  font-size: 16px;
+}
+
+body {
+  margin: 0; // IE Reset
+  background: @backgroundColor;
+  overflow: hidden;
+  font-size: @fontSizeSmall;
   line-height:1.5;
   color: @textColor;
   font-family: @bodyFonts;
-  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-font-smoothing: antialiased; // Fix for webkit rendering
   -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  // Font-size scales with screen-size:
+  .mq-min (@breakSmall, {
+    font-size: @fontSizeMedium;
+  });
+  .mq-min (@breakMedium, {
+    font-size: @fontSizeLarge;
+  });
+  .mq-min (@breakLarge, {
+    font-size: @fontSizeExtraLarge;
+  });
 }
 
-/* Links */
-a, a:link, a:visited { color: @mainColor; text-decoration: none; outline: 0; }
-a:hover, a:focus, a:active { color: darken(@mainColor, 30%); }
+// Links
+a { color: @mainColor; text-decoration: none; outline: 0; }
+a:hover, a:focus, a:active { color: darken(@mainColor, 10%); }
 p a, p a:visited { line-height: inherit; }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {font-family: @headFonts; font-weight: normal; font-size: 1.2em; line-height: 1.6;}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {font-weight: inherit; color: inherit;}
+// Typography
 
-h1 {margin: 16px 0; color: @mainColor; font-size:2.1em;border-bottom: 1px solid #eeeeee;} // #FIXME! Borders and margins should be styled in project specific objects.
-h2 {margin: 16px 0; color: @mainColor; font-size:1.7em;border-bottom: 1px solid #eeeeee;} // #FIXME! Borders and margins should be styled in project specific objects.
-h3 {color: @mainColor; font-size:1.5em;}
-h4 {}
-h5 {}
-h6 {}
-    
+// Please style your headlines with the help of classes (e.g.: .headline, .subline, .heading)
+h1, h2, h3, h4, h5, h6 {
+  color: inherit; font-family: @headFonts; font-weight: normal; line-height: 1.6;
+  &:not(:first-child) {margin-top: 1.5em;}
+  a {font-weight: inherit; color: inherit;}
+}
+
+h1 {font-size: 2.1em; margin-bottom: 1em;}
+h2 {font-size: 1.7em; margin-bottom: .5em;}
+h3 {font-size: 1.5em; margin-bottom: .25em;}
+h4 {font-size: 1.2em;}
+h5 {font-size: 1.15em;}
+h6 {font-size: 1em;}
+
+// Use .headline for your important headlines.
+.headline {font-family: @headFonts; color: @mainColor;}
+// Use .subline to your headline
+.subline {font-family: @headFonts; color: lighten(@complementColor, 20%);}
+// remove margin-top of .subline after .headline
+.headline + .subline {margin-top: 0;}
+// Use .lead to emphasize the first paragraph of a section.
+.lead {font-size: 1.3em; font-weight: 300;}
+
 p {
   line-height: 1.6;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
+strong {font-weight: 700;}
 em {font-style:italic;}
+small {font-size: .75em}
+
+ins {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+
+mark {
+  background: lighten(@mainColor,40%);
+  color: contrast(lighten(@mainColor,40%), @textColor, @invTextColor);
+  padding:1px;
+  &:before,
+  &:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+  }
+}
+
 blockquote {
   font-family: @headFonts;
-  color: #828282;
+  font-style: italic;
+  font-size: 1.3em;
+  color: @complementColor;
   padding: 0 15px;
-  border-left: 7px solid #d1d1d1;
+  border-left: 7px solid @complementColor;
+  cite {
+    font-size: .8em;
+    vertical-align: baseline;
+    * {vertical-align: baseline;}
+    &:before {
+      display: inline-block;
+      content: '\2014';
+      margin-right: 3px;
+      color: @complementColor;
+    }
+  }
+  &:after {
+    content: attr(cite);
+    font-size: .6em;
+    margin-top: 2em;
+  }
 }
 
-code, pre {font-family: @monoFonts;}
-
-/* Lists */
-ul, .ul-vFirst {
-    padding:0;
-    margin:0;
-    list-style-position: inside;
-    list-style-type: disc;
+code, pre {font-family: @monoFonts; background: darken(@backgroundColor,5%); color: contrast(darken(@backgroundColor,5%));}
+code {
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 4;
+  hyphens: none;
+  padding: 3px;
+  border-radius: 3px;
+  margin: 0px 3px;
+  &:before,
+  &:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+  }
+}
+pre {
+  padding: 10px 20px;
+  margin-bottom: 10px;
 }
 
-.ul-vSecond {
-    padding: 3px 18px;
-    list-style-type: square;
+// Keys
+.kbd,
+kbd {
+  background-color: darken(@backgroundColor, 10%);
+  border: 1px solid darken(@backgroundColor, 15%);
+  border-radius: 3px;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: contrast(darken(@backgroundColor, 10%));
+  display: inline-block;
+  font-size: .8rem;
+  font-family: @monoFonts;
+  margin: 0 0.1em;
+  padding: .2em .6em;
+  text-shadow: 0 1px 0 #fff;
+  .txt-nowrap;
+  &.kbd-vDark {
+    border: 1px solid contrast(darken(@backgroundColor, 15%));
+    background-color: contrast(darken(@backgroundColor, 10%));
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px lighten(contrast(darken(@backgroundColor, 10%)), 20%) inset;
+    color: darken(@backgroundColor, 10%);
+  }
 }
 
-.ul-vThird {
-    padding: 3px 18px;
-    list-style-type: circle;
+// Lists
+ul.is-list {
+  padding: 3px 18px;
+  margin:0;
+  list-style-type: disc;
 }
 
-ol, .ol-vFirst {
-    padding:0;
-    margin:0;
-    list-style-position: inside;
-    list-style-type: decimal;
+.is-list ul {
+  padding: 3px 18px;
+  list-style-type: square;
 }
 
-.ol-vSecond {
-    padding: 3px 18px;
-    list-style-type: upper-roman;
+.is-list ul ul,
+.is-list ol ul {
+  list-style-type: circle;
 }
 
-.ol-vThird {
-    padding: 3px 18px;
-    list-style-type: upper-alpha;
+ol.is-list {
+  padding: 3px 20px;
+  margin:0;
+  list-style-type: decimal;
 }
 
-// => Basic Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-  body {font-size: 90%;}
+.is-list ol {
+  padding: 3px 20px;
+  list-style-type: upper-roman;
 }
 
-.media-mixin(@break) when (@break = @breakMedium) {
-
+.is-list ol ol,
+.is-list ul ol {
+  list-style-type: upper-alpha;
 }
 
-.media-mixin(@break) when (@break = @breakLarge) {
-
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-
-}

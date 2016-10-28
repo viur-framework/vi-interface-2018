@@ -1,12 +1,14 @@
 @charset "UTF-8";
-/* ---------------------------------------------------------------------------------------
-    #TOOLTIPS
---------------------------------------------------------------------------------------- */
+/**
+ * TOOLTIPS
+ *
+ * These great tooltips are taken from primercss.io — created by and copyright GitHub, Inc.
+ */
 
-/* These great tooltips are taken from primercss.io — created by and copyright GitHub, Inc. */
 
 @tipMultilineMaxwidth: 250px;
 @tipColor: @hintColor;
+
 
 .tip {
   position: relative;
@@ -256,26 +258,4 @@
 
 .tip-vError {
   .colorizeTooltip(@failColor);
-}
-
-// => Tooltip Media Queries
-
-.media-mixin(@break) when (@break = @breakSmall) {
-
-}
-
-.media-mixin(@break) when (@break = @breakMedium) {
-
-}
-
-.media-mixin(@break) when (@break = @breakLarge) {
-
-}
-
-.media-mixin(@break) when (@break = @break2x) {
-
-}
-
-.media-mixin(@break) when (@break = @breakPrint) {
-
 }
