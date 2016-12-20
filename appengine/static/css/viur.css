@@ -1029,6 +1029,7 @@ ol.is-list{
   border-radius:1px;
   cursor:pointer;
   user-select:none;
+  align-self:self-start;
   vertical-align:middle;
   white-space:nowrap;
   display:inline-block;
