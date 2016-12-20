@@ -1,0 +1,31 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "test bla",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^3.4.0",
+    "cssshrink": "0.0.5",
+    "favicons": "^4.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-favicons": "^2.2.5",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-lesshint": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgmin": "^1.2.1",
+    "gulp-svgstore": "^5.0.5",
+    "imagemin-pngquant": "^4.2.0",
+    "postcss-discard-comments": "^2.0.3",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-zindex": "^2.0.1",
+    "psi": "^2.0.2"
+  },
+  "dependencies": {}
+}

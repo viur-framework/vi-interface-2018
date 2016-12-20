@@ -13,7 +13,7 @@
 
 	<!-- Favicon -->
 	<link rel="icon" href="static/images/favicon.png" type="image/png"/>
-	<link rel="stylesheet" href="../static/css/style.css"/>
+	<link rel="stylesheet" href="../static/css/viur.css"/>
 
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
@@ -65,191 +65,6 @@
 			flex: 1
 		}
 
-		.btn {
-			align-self: flex-start
-		}
-
-		.select {
-			align-self: flex-start
-		}
-
-		.input {
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			min-width: 0;
-			flex: 1;
-		}
-
-		.master {
-			position: relative;
-			display: flex;
-			flex-wrap: wrap;
-			width: 100%;
-			height: 100vh;
-		}
-
-		.headerwrap {
-			position: relative;
-			height: 50px;
-			width: 100%;
-			-webkit-box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
-			box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
-			background-color: #fff;
-			z-index: 50;
-			border-bottom: 2px solid #BE1622;
-		}
-
-		.headerwrap .btn {
-			margin: 0;
-			padding: 0 20px;
-			line-height: 48px;
-			float: right;
-		}
-
-		.contentmaster {
-
-			width: 100%;
-			display: flex;
-			height: 100vh;
-		}
-
-		.sidebarwrap {
-			width: 20%;
-			-webkit-box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
-			box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
-			z-index: 40;
-
-			overflow-y: scroll;
-			min-width: 300px;
-			height: 100vh;
-			padding-bottom: 60px;
-		}
-
-		.rightwrap {
-			width: 80%;
-
-			display: flex;
-			flex-direction: column;
-			height: 100vh;
-			padding-bottom: 60px;
-
-		}
-
-		.contentwrap {
-			width: 100%;
-			overflow-y: scroll;
-			height: 100vh;
-		}
-
-		.aktionbar {
-			width: 100%;
-			padding: 5px 10px;
-			background-color: #f7f7f7;
-			-webkit-box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
-			box-shadow: 0 0 3px 1px rgba(50, 50, 50, .5);
-			z-index: 30;
-
-		}
-
-		.iconnav {
-			position: relative;
-			font-size: .8em;
-			line-height: 2.4em;
-			float: right;
-		}
-
-		.iconnav li {
-			float: left;
-			color: #777;
-		}
-
-		.iconnav li button{
-			border: 0;
-			border-left: 1px solid #ccc;
-			border-bottom: 2px solid #BE1622;
-			color: #555;
-			position: relative;
-			padding: 0 7px;
-			line-height: 48px;
-			float: left;
-			text-decoration: none;
-			text-shadow: none;
-			-webkit-transition: all 0.6s ease;
-			-moz-transition: all 0.6s ease;
-			-o-transition: all 0.6s ease;
-			transition: all 0.6s ease;
-			-webkit-appearance: none;
-			background-color: #fff;
-			font-weight: 700;
-
-		}
-
-
-
-		.iconnav li.inactive button {
-			color: #444;
-		}
-
-
-		/* Icon Links */
-		.iconnav li button.has-icon {
-			color: transparent;
-			letter-spacing: -1em;
-			overflow: hidden;
-			min-width: 48px;
-		}
-
-		.iconnav li button:hover {
-			color: #555;
-			background-color: #f7f7f7;
-			text-decoration: none;
-			border-bottom: 2px solid #ff1122;
-		}
-
-		.iconnav li button.has-icon:before {
-			background-repeat: no-repeat;
-			background-size: contain;
-			background-position: center center;
-			width: 48px;
-			height: 48px;
-			content: ' ';
-			position: relative;
-			float: left;
-			margin-left: 0;
-			margin-right: 0;
-		}
-
-		/* Action Icons */
-		.iconnav li button.has-icon.dashboard:before {
-			background-position: 0px 0px;
-		}
-
-		.iconnav li button.has-icon.myfiles:before {
-			background-position: -32px 0px;
-		}
-
-		.iconnav li button.has-icon.accountmgnt:before {
-			background-image: url('../static/icons/actions/nav-accountmgnt.svg');
-		}
-		.iconnav li button.has-icon.logout:before {
-			background-image: url('../static/icons/actions/nav-logout.svg');
-		}
-
-		.iconnav li button.has-icon.tasks:before {
-			background-image: url('../static/icons/actions/nav-tasks.svg');
-		}
-
-
-		.iconnav li button.has-icon:hover {
-			overflow: visible;
-			min-width: 130px;
-			letter-spacing: normal;
-		}
-
-
-
-
-
 	</style>
 
 </head>
@@ -257,54 +72,54 @@
 
 <body>
 
-<div class="master">
+<div class="master-wrap">
 
-	<div class="headerwrap">
+	<div class="top-wrap">
 
-		<nav class="iconnav">
-			<ul>
-				<li>
-					<button class="has-icon tasks">TASKS</button>
+		<nav class="topbar-nav">
+			<ul class="topbar-navList">
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon tasks">TASKS</button>
 				</li>
-				<li>
-					<button title="admin@oase-viur.appspot.com" class="has-icon accountmgnt">admin@oase-viur.appspot.com
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon accountmgnt" title="admin@oase-viur.appspot.com" >admin@oase-viur.appspot.com
 					</button>
 				</li>
-				<li>
-					<button class="has-icon logout">Abmelden</button>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon logout">Abmelden</button>
 				</li>
 			</ul>
 		</nav>
 
 	</div>
 
-	<div class="contentmaster">
-		<div class="sidebarwrap">
+	<div class="viewer-wrap">
+
+		<aside class="menu-wrap">
+			<header class="menubar-top">test head</header>
+			<nav class="menubar-nav">
+				<ul class="menubar-navList">
+					<li class="menubar-navItem">
+						<button class="menubar-navBtn">
+							<img class="menubar-navImg" src="#" />
+							<span class="menubar-navName">test</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+			<footer class="menubar-foot">test foot</footer>
+		</aside>
 
 
-			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
-			<br/>affe <br/>
-			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>
+		<div class="main-wrap">
 
-			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
-			<br/>affe <br/>
-			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>
-
-			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
-			<br/>affe <br/>
-			affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>
-
-
-		</div>
-
-
-		<div class="rightwrap">
-
-			<div class="aktionbar">
-				Ich bin die Aktionabr - SWAG
+			<div class="action-wrap">
+				<div class="action-bar">
+					Ich bin die Aktionabr - SWAG
+				</div>
 			</div>
 
-			<div class="contentwrap">
+			<div class="content-wrap">
 
 				<article class="wrap">
 					<div class="bind">
