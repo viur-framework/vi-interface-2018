@@ -988,7 +988,7 @@ ol.is-list{
   display:flex;
   height:100vh;
 }
-.menu-wrap{
+.modul-wrap{
   width:20%;
   -webkit-box-shadow:0 0 3px 1px rgba(50, 50, 50, 0.5);
   box-shadow:0 0 3px 1px rgba(50, 50, 50, 0.5);
@@ -3200,6 +3200,131 @@ a:hover .thumbnail,a:focus .thumbnail{
 .thumbnail-caption{
   margin-top:.5em;
   padding:1em;
+}
+.modulbar-navList{
+  display:flex;
+  flex-direction:column;
+}
+.modulbar-navBtn{
+  user-select:none;
+  border:0;
+  width:100%;
+  position:relative;
+  border-bottom:1px dotted #cccccc;
+  border-right:1px solid #ccc;
+  height:auto;
+  background-color:#f7f7f7;
+  background:-moz-linear-gradient(top, #f2f2f2, #f7f7f7);
+  background:-webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f7f7f7));
+  padding:12px 13px;
+  transition:all 0.3s ease;
+}
+.modulbar-navBtn-vSub{
+  background-color:#d6d6d9;
+  background:-moz-linear-gradient(top, #d0d0d3, #d6d6d9);
+  background:-webkit-gradient(linear, left top, left bottom, from(#d0d0d3), to(#d6d6d9));
+}
+.modulbar-navBtn:hover,.modulbar-navBtn:focus{
+  background:#fff;
+  text-decoration:none;
+}
+.modulbar-navImg{
+  width:32px;
+  height:32px;
+  float:left;
+}
+.modulbar-navName{
+  float:left;
+  letter-spacing:1px;
+  margin-left:15px;
+  line-height:32px;
+  text-shadow:0px 1px 1px #fff;
+  min-width:20%;
+  max-width:60%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.modulbar-navImg-vSub,
+.modulbar-navImg-vSubSub{
+  width:16px;
+  height:16px;
+  float:left;
+  margin-left:16px;
+}
+.modulbar-navName-vSub,
+.modulbar-navName-vSubSub{
+  float:left;
+  letter-spacing:1px;
+  margin-left:15px;
+  line-height:16px;
+  text-shadow:0px 1px 1px #fff;
+  font-size:.8em;
+  text-shadow:none;
+  color:#666;
+}
+.modulbar-navBtn-vSub,
+.modulbar-navBtn-vSubSub{
+  background-color:#e9e9e9;
+  background:-moz-linear-gradient(top, #e4e4e4, #e9e9e9);
+  background:-webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#e9e9e9));
+}
+.modulbar-navList-vSubSub{
+  background-color:#dbdbdc;
+  background:-moz-linear-gradient(top, #d5d5d7, #dbdbdc);
+  background:-webkit-gradient(linear, left top, left bottom, from(#d5d5d7), to(#dbdbdc));
+  border-bottom:1px dotted #bbb;
+}
+.modulbar-navImg-vSubSub{
+  margin-left:44px;
+}
+.modullist ul button{
+  margin-top:-32px;
+  position:relative;
+  float:right;
+  margin-right:10px;
+}
+.modullist ul ul button{
+}
+.modullist ul button.closebtn{
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border-radius:15px;
+  width:22px;
+  padding:9px 2px 11px;
+  line-height:0;
+  font-size:.7em;
+  border:1px solid #d00f1c;
+  background-color:#890a12;
+  background:-moz-linear-gradient(top, #d00f1c, #890a12);
+  background:-webkit-gradient(linear, left top, left bottom, from(#d00f1c), to(#890a12));
+  color:transparent;
+  letter-spacing:-1em;
+  overflow:hidden;
+}
+.modullist ul button.closebtn:before{
+  width:16px;
+  height:16px;
+  content:' ';
+  position:relative;
+  float:left;
+  margin-top:-7px;
+  background-image:url(icons/vi_actions_sprite_white.svg);
+  background-repeat:no-repeat;
+  background-position:0px -64px;
+}
+.modullist ul button.closebtn:hover,.modullist ul button.closebtn:focus{
+  overflow:visible;
+  min-width:90px;
+  letter-spacing:normal;
+  color:#eee;
+}
+.modullist li.is_active a{
+  background:#ef2331;
+}
+.modullist li.is_active h3{
+  color:#fff;
+  text-shadow:none;
 }
 .menu-list{
   list-style:none;
