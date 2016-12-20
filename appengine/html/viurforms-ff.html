@@ -17,6 +17,19 @@
 
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
+
+	<script>
+
+		$(document).ready(function () {
+
+		$('.js-opensearch').click(function () {
+			$('#search').toggleClass("open");
+		});
+
+					});
+
+	</script>
+
 	<style>
 		.vi-bone {
 			display: flex;
@@ -65,6 +78,109 @@
 			flex: 1
 		}
 
+		.vi-viur-icon {
+			background-image: url(..//static/icons/actions/vi-viur-icon.svg);
+			background-size: cover;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			float: left;
+		}
+
+		.topbar-navBtn {
+			padding: 0 14px;
+			font-weight: 700;
+			white-space: nowrap;
+			max-width: 250px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		.topbar-navBtn.has-icon {
+			padding: 0 7px;
+		}
+
+
+		.action-wrap {
+    padding: 0;
+			background-color: #efefef;
+
+}
+
+		.action-bar {
+			padding: 7px 15px;
+		}
+
+
+		.i-clone:before{background-image:url(../static/icons/actions/clone.svg)}
+		.i-bin:before{background-image:url(../static/icons/actions/bin.svg)}
+		.i-reload-grey:before{background-image:url(../static/icons/actions/reload-grey.svg)}
+		.i-eye:before{background-image:url(../static/icons/actions/eye.svg)}
+		.i-clone:before{background-image:url(../static/icons/actions/clone.svg)}
+		.i-spyglass:before{background-image:url(../static/icons/actions/spyglass.svg)}
+		.i-edit-grey:before{background-image:url(../static/icons/actions/edit-grey.svg)}
+		.i-settings-grey:before{background-image:url(../static/icons/modules/settings-grey.svg)}
+
+
+.btn-vSmall.just-icon {
+    padding: 3px 6px;
+	background-color: #fff;
+}
+
+
+.btn-vSmall.just-icon:before {
+    margin: 0;
+    height: 1.4em;
+    width: 1.4em;
+	background-size: 120%;
+	background-position: center center;
+}
+
+		.btn-vSmall {
+    border: 1px solid #999!important;
+}
+
+
+
+		.top-wrap {
+    height: 40px;
+}
+
+		.topbar-navBtn {
+    line-height: 38px;
+}
+
+		.topbar-navBtn.has-icon:before {
+    height: 38px;
+
+}
+
+
+		.search-bar {
+			padding: 0;
+			max-height: 0px;
+			overflow: hidden;
+			float: right;
+			margin: 0 15px 0 0;
+			transition: all 1s ease;
+		}
+
+		.search-bar.open {
+			padding: 0;
+			max-height: 300px;
+			overflow: visible;
+			margin: 0 15px 10px 0;
+		}
+
+		.search-bar input {
+			width: 300px;
+			padding: 0 12px;
+			display: inline-block;
+			float: left;
+			margin-top: 3px;
+		}
+
+
 	</style>
 
 </head>
@@ -75,6 +191,26 @@
 <div class="master-wrap">
 
 	<div class="top-wrap">
+
+		<div class="vi-viur-icon">
+
+		</div>
+
+
+		<nav class="topbar-nav" style="float: none">
+			<ul class="topbar-navList">
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn">Mausbrand</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn">Ansprechpartner und Teamkollegen</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn">Christopher Reinbothe</button>
+				</li>
+			</ul>
+		</nav>
+
 
 		<nav class="topbar-nav">
 			<ul class="topbar-navList">
@@ -114,9 +250,28 @@
 		<div class="main-wrap">
 
 			<div class="action-wrap">
-				<div class="action-bar">
-					Ich bin die Aktionabr - SWAG
+				<div class="action-bar bar">
+					<div class="barGroup barGroup-vLeft">
+					<button class="btn btn-vSmall btn-vPrimary" type="button" title="Hinzufügen">Hinzufügen</button>
+					<button class="btn btn-vSmall has-icon just-icon i-edit-grey" type="button" title="Bearbeiten">Bearbeiten</button>
+					<button class="btn btn-vSmall  has-icon just-icon i-clone" type="button" title="Klonen">Klonen</button>
+					<button class="btn btn-vSmall  has-icon just-icon i-bin" type="button" title="Löschen">Löschen</button>
+					</div>
+
+					<div class="barGroup barGroup-vRight">
+					<button class="btn btn-vSmall has-icon just-icon i-reload-grey" type="button">Klonen</button>
+					<button class="btn btn-vSmall has-icon just-icon i-settings-grey" type="button">Felder hinzufügen</button>
+						<button class="btn btn-vSmall has-icon just-icon i-eye" type="button">Felder hinzufügen</button>
+						<button class="btn btn-vSmall has-icon just-icon i-spyglass js-opensearch" type="button">Suche</button>
+					</div>
+
 				</div>
+
+				<div id="search" class="search-bar">
+					<input type="text" placeholder="Suchbegriff...">
+					<button class="btn btn-vSmall btn-vPrimary" type="button" title="Hinzufügen">Los</button>
+				</div>
+
 			</div>
 
 			<div class="content-wrap">
@@ -124,8 +279,14 @@
 				<article class="wrap">
 					<div class="bind">
 						<div class="content">
+
+									<br />
+							<br />
+
 							<form class="viurForm">
 								<fieldset class="vi-set vi-set-vAllgemein is-inactive" name="Allgemein">
+
+
 									<legend class="vi-legend">Allgemein</legend>
 
 									<section class="vi-section">
