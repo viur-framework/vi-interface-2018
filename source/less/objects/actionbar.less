@@ -2,6 +2,27 @@
 /* ACTIONBAR */
 
 // Prefixes and objects:
-// .actionbar-
+// .action-bar
+// .search-bar
+
+
+.action-bar {
+  padding: 7px 15px;
+  background-color: #efefef;
+}
+
+.search-bar {
+  padding: 0;
+  max-height: 0px;
+  overflow: hidden;
+  float: right;
+  margin: 0 15px 0 0;
+  transition: all 1s ease;
+  &.is-active {
+    padding: 0;
+    max-height: 300px;
+    overflow: visible;
+  }
+}
 
 

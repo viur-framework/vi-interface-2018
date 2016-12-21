@@ -23,7 +23,7 @@
 		$(document).ready(function () {
 
 		$('.js-opensearch').click(function () {
-			$('#search').toggleClass("open");
+			$('#search').toggleClass("is-active");
 		});
 
 
@@ -36,149 +36,7 @@
 	</script>
 
 	<style>
-		.vi-bone {
-			display: flex;
-		}
 
-		.vi-label {
-			min-width: 25%;
-			align-self: flex-start;
-			border-right-width: 0;
-		}
-
-		.vi-boneTranslator {
-			flex: 1;
-			display: flex;
-		}
-
-		.vi-boneEditor {
-			flex: 1;
-			display: flex;
-			min-width: 0;
-		}
-
-		.vi-selection {
-			display: flex;
-			min-width: 0;
-			flex: 1;
-			flex-direction: column;
-		}
-
-		.vi-relation {
-			display: flex;
-			flex: 1;
-		}
-
-		.vi-file {
-			display: flex;
-			min-width: 0;
-			flex: 1;
-		}
-
-		.select {
-			margin: 6px;
-		}
-
-		.vi-textarea {
-			flex: 1
-		}
-
-		.vi-viur-icon {
-			background-image: url(..//static/icons/actions/vi-viur-icon.svg);
-			background-size: cover;
-			width: 40px;
-			height: 40px;
-			display: inline-block;
-			float: left;
-		}
-
-		.topbar-navBtn {
-			padding: 0 14px;
-			font-weight: 700;
-			white-space: nowrap;
-			max-width: 250px;
-			text-overflow: ellipsis;
-			overflow: hidden;
-		}
-
-		.topbar-navBtn.has-icon {
-			padding: 0 7px;
-		}
-
-
-		.action-wrap {
-    padding: 0;
-			background-color: #efefef;
-
-}
-
-		.action-bar {
-			padding: 7px 15px;
-		}
-
-
-		.i-clone:before{background-image:url(../static/icons/actions/clone.svg)}
-		.i-bin:before{background-image:url(../static/icons/actions/bin.svg)}
-		.i-reload-grey:before{background-image:url(../static/icons/actions/reload-grey.svg)}
-		.i-eye:before{background-image:url(../static/icons/actions/eye.svg)}
-		.i-clone:before{background-image:url(../static/icons/actions/clone.svg)}
-		.i-spyglass:before{background-image:url(../static/icons/actions/spyglass.svg)}
-		.i-edit-grey:before{background-image:url(../static/icons/actions/edit-grey.svg)}
-		.i-settings-grey:before{background-image:url(../static/icons/modules/settings-grey.svg)}
-
-
-.btn-vSmall.just-icon {
-    padding: 3px 6px;
-	background-color: #fff;
-}
-
-
-.btn-vSmall.just-icon:before {
-    margin: 0;
-    height: 1.4em;
-    width: 1.4em;
-	background-size: 120%;
-	background-position: center center;
-}
-
-		.btn-vSmall {
-    border: 1px solid #999!important;
-}
-
-		.content {
-			margin-top: 10px;
-		}
-
-
-
-		.top-wrap {
-    height: 40px;
-}
-
-		.topbar-navBtn {
-    line-height: 38px;
-}
-
-		.topbar-navBtn.has-icon:before {
-    height: 38px;
-
-}
-
-
-		.search-bar {
-			padding: 0;
-			max-height: 0px;
-			overflow: hidden;
-			float: right;
-			margin: 0 15px 0 0;
-			transition: all 1s ease;
-		}
-
-		.search-bar.open {
-			padding: 0;
-			max-height: 300px;
-			overflow: visible;
-		}
 
 /* #vi_forms
 ================================================== */
@@ -254,14 +112,6 @@
 		form fieldset.is-active .vi-section {
 			max-height: 9000px;
 		}
-
-
-
-		.topbar-navBtn.has-icon.language:before {
-    background-image: url(../static/icons/actions/nav-language.svg);
-}
-
-
 
 
 	</style>

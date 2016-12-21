@@ -31,6 +31,7 @@
 @import "objects/progress";
 @import "objects/pagination";
 @import "objects/image"; // base64 encoded images, image shapes and thumbnails.
+@import "objects/icon";
 @import "objects/modulbar";
 @import "objects/topbar";
 @import "objects/actionbar";
@@ -43,3 +44,57 @@
 
 // Media Queries
 @import "tools/mediaqueries"; // really simple media queries.
+
+
+/* Vi Custom Styling */
+
+@btnBackgroundColor: #f7f7f7;
+
+.btn-vSmall {border: 1px solid #999!important;}
+
+.vi-bone {
+  display: flex;
+}
+
+.vi-label {
+  min-width: 25%;
+  align-self: flex-start;
+  border-right-width: 0;
+}
+
+.vi-boneTranslator {
+  flex: 1;
+  display: flex;
+}
+
+.vi-boneEditor {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.vi-selection {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.vi-relation {
+  display: flex;
+  flex: 1;
+}
+
+.vi-file {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+}
+
+.select {
+  margin: 6px;
+}
+
+.vi-textarea {
+  flex: 1
+}
