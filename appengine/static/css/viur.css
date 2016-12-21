@@ -2287,6 +2287,38 @@ ol.is-list{
   font-weight:600;
   color:inherit;
 }
+.alert-close{
+  position:absolute;
+  top:5px;
+  right:0px;
+  cursor:pointer;
+  background-color:transparent;
+  border:0;
+  opacity:0.5;
+  -webkit-appearance:none;
+  transition:all .3s ease;
+}
+.alert-close:hover,.alert-close:focus{
+  opacity:1;
+}
+.alert-close.has-icon:before{
+  content:"";
+  position:relative;
+  display:inline-block;
+  height:1em;
+  width:1em;
+  vertical-align:text-top;
+  margin-top:4px;
+  background-size:cover;
+  background-position:top left;
+  background-repeat:no-repeat;
+  background-color:inherit;
+  background-blend-mode:multiply;
+}
+.alert-closeImg{
+  height:1em;
+  width:1em;
+}
 .alert-center{
   position:fixed;
   bottom:0;
