@@ -434,7 +434,7 @@ body{
   margin:0;
   background:#fafafa;
   line-height:1.5;
-  color:#222;
+  color:#555;
   font-family:'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   -webkit-font-smoothing:antialiased;
   -webkit-text-size-adjust:100%;
@@ -588,7 +588,7 @@ ins{
 }
 mark{
   background:#f9b2b6;
-  color:#222;
+  color:#555;
   padding:1px;
 }
 mark:before,
@@ -2818,7 +2818,7 @@ ol.is-list{
 }
 .menu-vSub a.menu-link{
   padding-left:32px;
-  color:#222;
+  color:#555;
   background-color:#e7e7e7;
   border-bottom-style:dotted;
 }
@@ -2841,7 +2841,7 @@ ol.is-list{
 }
 .menu-vSub .menu-vSub a.menu-link{
   padding-left:44px;
-  color:#222;
+  color:#555;
   background-color:#dbdbdb;
   border-bottom-style:dotted;
 }
@@ -2852,14 +2852,14 @@ ol.is-list{
   border-top:0;
 }
 .menu-vSub .menu-vSub a.menu-link:hover,.menu-vSub .menu-vSub a.menu-link:focus{
-  color:#222;
+  color:#555;
   background-color:#cecece;
 }
 a.menu-link{
   display:block;
   box-sizing:border-box;
   padding:10px 20px;
-  color:#222;
+  color:#555;
   background-color:#f4f4f4;
   border:1px solid #cecece;
   border-top-width:0;
@@ -3188,7 +3188,7 @@ img{
   transition:.2s ease border;
 }
 .thumbnail p{
-  color:#222;
+  color:#555;
 }
 a:hover .thumbnail,a:focus .thumbnail{
   border-color:#d00f1c;
@@ -3207,13 +3207,14 @@ a:hover .thumbnail,a:focus .thumbnail{
   width:100%;
   position:relative;
   border-bottom:1px dotted #cccccc;
-  border-right:1px solid #ccc;
   height:auto;
   background-color:#f7f7f7;
   background:-moz-linear-gradient(top, #f2f2f2, #f7f7f7);
   background:-webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f7f7f7));
-  padding:12px 13px;
   transition:all 0.3s ease;
+  padding:2px 0;
+  display:flex;
+  color:#555;
 }
 .modulbar-navBtn-vSub{
   background-color:#d6d6d9;
@@ -3225,53 +3226,55 @@ a:hover .thumbnail,a:focus .thumbnail{
   text-decoration:none;
 }
 .modulbar-navImg{
-  width:32px;
-  height:32px;
-  float:left;
+  width:40px;
+  height:40px;
 }
 .modulbar-navName{
-  float:left;
   letter-spacing:1px;
   margin-left:15px;
-  line-height:32px;
   text-shadow:0px 1px 1px #fff;
-  min-width:20%;
-  max-width:60%;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  flex:1;
+  text-align:left;
+  line-height:40px;
 }
 .modulbar-navImg-vSub,
 .modulbar-navImg-vSubSub{
-  width:16px;
-  height:16px;
-  float:left;
-  margin-left:16px;
+  width:20px;
+  height:20px;
+  margin:0 10px;
 }
 .modulbar-navName-vSub,
 .modulbar-navName-vSubSub{
-  float:left;
   letter-spacing:1px;
   margin-left:15px;
-  line-height:16px;
   font-size:.8em;
   text-shadow:none;
-  color:#666;
+  color:#626262;
+  line-height:20px;
 }
-.modulbar-navBtn-vSub,
-.modulbar-navBtn-vSubSub{
+.modulbar-navBtn-vSub{
   background-color:#e9e9e9;
   background:-moz-linear-gradient(top, #e4e4e4, #e9e9e9);
   background:-webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#e9e9e9));
+  padding:4px 0;
 }
-.modulbar-navList-vSubSub{
+.modulbar-navBtn-vSubSub{
   background-color:#dbdbdc;
   background:-moz-linear-gradient(top, #d5d5d7, #dbdbdc);
   background:-webkit-gradient(linear, left top, left bottom, from(#d5d5d7), to(#dbdbdc));
-  border-bottom:1px dotted #bbb;
+  padding:4px 0;
 }
-.modulbar-navImg-vSubSub{
-  margin-left:44px;
+.modulbar-navCloseBtn{
+  height:1em;
+  margin:auto;
+  padding:0 5px;
+}
+.modulbar-navCloseImg{
+  height:100%;
+  width:auto;
 }
 .modullist ul button{
   margin-top:-32px;
@@ -3368,7 +3371,7 @@ a:hover .thumbnail,a:focus .thumbnail{
 }
 .menu-vSub a.menu-link{
   padding-left:32px;
-  color:#222;
+  color:#555;
   background-color:#e7e7e7;
   border-bottom-style:dotted;
 }
@@ -3391,7 +3394,7 @@ a:hover .thumbnail,a:focus .thumbnail{
 }
 .menu-vSub .menu-vSub a.menu-link{
   padding-left:44px;
-  color:#222;
+  color:#555;
   background-color:#dbdbdb;
   border-bottom-style:dotted;
 }
@@ -3402,14 +3405,14 @@ a:hover .thumbnail,a:focus .thumbnail{
   border-top:0;
 }
 .menu-vSub .menu-vSub a.menu-link:hover,.menu-vSub .menu-vSub a.menu-link:focus{
-  color:#222;
+  color:#555;
   background-color:#cecece;
 }
 a.menu-link{
   display:block;
   box-sizing:border-box;
   padding:10px 20px;
-  color:#222;
+  color:#555;
   background-color:#f4f4f4;
   border:1px solid #cecece;
   border-top-width:0;

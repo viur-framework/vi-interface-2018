@@ -11,17 +11,18 @@
 
 .modulbar-navBtn {
   user-select: none;
-  border:0;
+  border: 0;
   width: 100%;
   position: relative;
   border-bottom: 1px dotted #cccccc;
-  border-right: 1px solid #ccc;
   height: auto;
   background-color: #f7f7f7;
   background: -moz-linear-gradient(top, #f2f2f2, #f7f7f7);
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f7f7f7));
-  padding: 12px 13px;
   transition: all 0.3s ease;
+  padding: 2px 0;
+  display: flex;
+  color: @textColor;
 }
 
 .modulbar-navBtn-vSub {
@@ -35,59 +36,58 @@
   text-decoration: none;
 }
 .modulbar-navImg {
-  width: 32px;
-  height: 32px;
-  float: left;
+  width: 40px;
+  height: 40px;
 }
 .modulbar-navName {
-  float: left;
   letter-spacing: 1px;
   margin-left: 15px;
-  line-height: 32px;
   text-shadow: 0px 1px 1px #fff;
-  min-width: 20%;
-  max-width:60%;
-  overflow:hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1;
+  text-align: left;
+  line-height: 40px;
 }
 
 .modulbar-navImg-vSub,
 .modulbar-navImg-vSubSub {
-  width: 16px;
-  height: 16px;
-  float: left;
-  margin-left: 16px;
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
 }
 
 .modulbar-navName-vSub,
 .modulbar-navName-vSubSub {
-  float: left;
   letter-spacing: 1px;
   margin-left: 15px;
-  line-height: 16px;
   font-size: .8em;
   text-shadow: none;
-  color: #666;
+  color: lighten(@textColor,5%);
+  line-height:20px;
 }
 
-.modulbar-navBtn-vSub,
-.modulbar-navBtn-vSubSub {
+.modulbar-navBtn-vSub {
   background-color: #e9e9e9;
   background: -moz-linear-gradient(top, #e4e4e4, #e9e9e9);
   background: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#e9e9e9));
+  padding:4px 0;
 }
 
-.modulbar-navList-vSubSub {
+.modulbar-navBtn-vSubSub {
   background-color: #dbdbdc;
   background: -moz-linear-gradient(top, #d5d5d7, #dbdbdc);
   background: -webkit-gradient(linear, left top, left bottom, from(#d5d5d7), to(#dbdbdc));
-  border-bottom: 1px dotted #bbb;
+  padding:4px 0;
 }
 
-.modulbar-navImg-vSubSub {
-    margin-left: 44px;
+.modulbar-navCloseBtn {
+  height:1em;
+  margin: auto;
+  padding:0 5px;
 }
+.modulbar-navCloseImg {height:100%; width:auto;}
 
 .modullist ul button {
   margin-top: -32px;
