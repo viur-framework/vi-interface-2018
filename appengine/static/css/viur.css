@@ -802,82 +802,6 @@ ol.is-list{
 .is-transparent{
   background:transparent !important;
 }
-.outerwrap{
-  display:flex;
-  flex-wrap:wrap;
-  min-height:100%;
-}
-.wrap{
-  min-width:100%;
-  flex:1 100%;
-}
-.bind{
-  max-width:1300px;
-  padding:0 20px;
-  margin:0 auto;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  flex:1 100%;
-}
-@media (min-width: 37.5em) and (orientation: landscape){
-  .bind{
-    flex-flow:row wrap;
-  }
-}
-@media (min-width: 56.25em){
-  .bind{
-    flex-flow:row wrap;
-  }
-}
-.content ~ .sidebar{
-  font-size:.9em;
-  order:4;
-  padding:10px 0 20px;
-  flex:auto;
-}
-.content ~ .sidebar:nth-of-type(2){
-  flex:0 0 20%;
-  order:3;
-}
-@media (min-width: 37.5em) and (orientation: landscape){
-  .content ~ .sidebar{
-    flex:0 0 25%;
-    order:4;
-    padding:10px 0 20px 10px;
-  }
-}
-@media (min-width: 56.25em){
-  .content ~ .sidebar{
-    flex:0 0 25%;
-    order:4;
-    padding:10px 0 20px 10px;
-  }
-}
-.content ~ .sidebar-vLeft{
-  order:1;
-  flex:0 0 20%;
-}
-.content ~ .sidebar-vMarginal{
-  font-size:.8em;
-  flex:0 0 15%;
-  min-width:200px;
-}
-.content{
-  flex:2 0px;
-  order:2;
-  max-width:100%;
-}
-@media (min-width: 56.25em){
-  .content{
-    order:2;
-  }
-}
-.section{
-  min-width:0;
-  padding-top:10px;
-  padding-bottom:20px;
-}
 .bar{
   display:block;
   text-align:left;
@@ -1012,6 +936,10 @@ ol.is-list{
   width:100%;
   overflow-y:scroll;
   height:100vh;
+}
+.content{
+  padding:0 20px;
+  margin:0 auto;
 }
 .btn{
   font-weight:200;
@@ -2361,7 +2289,7 @@ ol.is-list{
 }
 .alert-center{
   position:fixed;
-  top:0;
+  bottom:0;
   right:0;
   padding:25px;
   z-index:13;
