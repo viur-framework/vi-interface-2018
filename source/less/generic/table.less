@@ -52,11 +52,10 @@
 }
 
 .tableBody-cell {
-  vertical-align:middle;
+  vertical-align:top;
   border:1px solid darken(@tableRowBackgroundColor,15%);
   border-width: 0 1px 1px 0;
   text-align: left;
-  padding:5px 10px;
   font-weight:normal;
   color:contrast(@tableRowBackgroundColor);
   .tableBody-row.is-active & {color:contrast(@successColor);}
@@ -97,4 +96,31 @@
     border-right-width: 0;
     &:last-of-type {border-right-width: 1px;}
   }
+}
+
+.table-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:5px 10px;
+  .is-open & {
+    white-space: normal;
+  }
+}
+
+.table-imageIcon {
+  height:1.4em;
+  width:auto;
+  display:inline;
+  .is-open & {
+    width:100%;
+    height:auto;
+    display:block;
+  }
+}
+
+.table-imageCaption {
+  font-weight:100;
+  font-size:.8em;
+  line-height: 1.4em;
 }

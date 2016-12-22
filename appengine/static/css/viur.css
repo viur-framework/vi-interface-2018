@@ -1426,7 +1426,7 @@ ol.is-list{
   vertical-align:middle;
   display:inline-block;
   margin:6px;
-  padding:8px 20px;
+  padding:7px 14px;
   padding-right:38px;
   background-color:#ffffff;
   border:1px solid #dddddd;
@@ -1435,12 +1435,15 @@ ol.is-list{
   background-repeat:no-repeat;
   background-position:right center;
   transition:all .3s ease;
+  line-height:inherit;
+  font-size:inherit;
 }
 .select:hover,.select:focus{
   box-shadow:0 3px 3px rgba(0, 0, 0, 0.4);
 }
 .select-vSmall{
-  padding:3px 7px 4px;
+  padding:3px 7px;
+  padding-right:14px;
   font-size:.8em;
   font-weight:400;
   background-size:10px;
@@ -1831,7 +1834,6 @@ ol.is-list{
   border:1px solid #d8d8d8;
   border-width:0 1px 1px 0;
   text-align:left;
-  padding:5px 10px;
   font-weight:normal;
   color:#000000;
 }
@@ -1882,6 +1884,30 @@ ol.is-list{
 .table-vNoYborder .tableHead-cell:last-of-type,
 .table-vNoYborder .tableBody-cell:last-of-type{
   border-right-width:1px;
+}
+.table-content{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  padding:5px 10px;
+}
+.is-open .table-content{
+  white-space:normal;
+}
+.table-imageIcon{
+  height:1.4em;
+  width:auto;
+  display:inline;
+}
+.is-open .table-imageIcon{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.table-imageCaption{
+  font-weight:100;
+  font-size:.8em;
+  line-height:1.4em;
 }
 .tip{
   position:relative;
@@ -3158,28 +3184,28 @@ a:hover .thumbnail,a:focus .thumbnail{
   padding:1em;
 }
 .i-clone:before{
-  background-image:url(../static/icons/actions/clone.svg);
+  background-image:url(../icons/actions/clone.svg);
 }
 .i-bin:before{
-  background-image:url(../static/icons/actions/bin.svg);
+  background-image:url(../icons/actions/bin.svg);
 }
 .i-reload-grey:before{
-  background-image:url(../static/icons/actions/reload-grey.svg);
+  background-image:url(../icons/actions/reload-grey.svg);
 }
 .i-eye:before{
-  background-image:url(../static/icons/actions/eye.svg);
+  background-image:url(../icons/actions/eye.svg);
 }
 .i-clone:before{
-  background-image:url(../static/icons/actions/clone.svg);
+  background-image:url(../icons/actions/clone.svg);
 }
 .i-spyglass:before{
-  background-image:url(../static/icons/actions/spyglass.svg);
+  background-image:url(../icons/actions/spyglass.svg);
 }
 .i-edit-grey:before{
-  background-image:url(../static/icons/actions/edit-grey.svg);
+  background-image:url(../icons/actions/edit-grey.svg);
 }
 .i-settings-grey:before{
-  background-image:url(../static/icons/modules/settings-grey.svg);
+  background-image:url(../icons/modules/settings-grey.svg);
 }
 .modulbar-navList{
   display:flex;
@@ -3539,7 +3565,7 @@ a.menu-link .icon{
   background-image:url('../icons/actions/nav-tasks.svg');
 }
 .topbar-navBtn.has-icon.language:before{
-  background-image:url(../static/icons/actions/nav-language.svg);
+  background-image:url(../icons/actions/nav-language.svg);
 }
 .topbar-navBtn.has-icon:hover,.topbar-navBtn.has-icon:focus{
   overflow:visible;
@@ -3547,7 +3573,7 @@ a.menu-link .icon{
   letter-spacing:normal;
 }
 .vi-viur-icon{
-  background-image:url(..//static/icons/actions/vi-viur-icon.svg);
+  background-image:url(../icons/actions/vi-viur-icon.svg);
   background-size:cover;
   width:40px;
   height:40px;
