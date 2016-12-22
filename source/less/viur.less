@@ -18,7 +18,6 @@
 // Generic elements: buttons, forms and messages
 @import "generic/button"; // some classic buttons.
 @import "generic/form"; // inputs, selects and other form elements.
-@import "generic/table"; // a classic table layout.
 @import "generic/tooltip"; // lightweight tooltips.
 @import "generic/badge"; // badges and marker.
 @import "generic/message"; // hints, errors, warnings etc.
@@ -26,19 +25,23 @@
 @import "generic/spinner"; // loading state for ajax requests.
 
 // Objects
-@import "objects/menu";
-@import "objects/boxes"; // classic media element.
 @import "objects/progress";
 @import "objects/pagination";
 @import "objects/image"; // base64 encoded images, image shapes and thumbnails.
 @import "objects/icon";
+
+// Menus
 @import "objects/modulbar";
 @import "objects/topbar";
 @import "objects/actionbar";
 
+// List
+@import "objects/viurtable";
+
+// Edit
+@import "objects/viurform";
 
 // Configuration and Mixins
-@import (optional) "../../../sources/less/icon"; // ViUR SVG icons.
 @import "tools/zindex"; // organize your z-indexes.
 @import "tools/state"; // is-, has-, no- etc.
 
@@ -47,54 +50,7 @@
 
 
 /* Vi Custom Styling */
-
 @btnBackgroundColor: #f7f7f7;
-
 .btn-vSmall {border: 1px solid #999!important;}
 
-.vi-bone {
-  display: flex;
-}
 
-.vi-label {
-  min-width: 25%;
-  align-self: flex-start;
-  border-right-width: 0;
-}
-
-.vi-boneTranslator {
-  flex: 1;
-  display: flex;
-}
-
-.vi-boneEditor {
-  flex: 1;
-  display: flex;
-  min-width: 0;
-}
-
-.vi-selection {
-  display: flex;
-  min-width: 0;
-  flex: 1;
-  flex-direction: column;
-}
-
-.vi-relation {
-  display: flex;
-  flex: 1;
-}
-
-.vi-file {
-  display: flex;
-  min-width: 0;
-  flex: 1;
-}
-
-.select {
-  margin: 6px;
-}
-
-.vi-textarea {
-  flex: 1
-}

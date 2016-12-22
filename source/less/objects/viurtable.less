@@ -102,8 +102,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding:5px 10px;
+  max-height: 100px;
+  transition: max-height 1s ease;
   .is-open & {
     white-space: normal;
+    max-height: 9999px;
   }
 }
 

@@ -26,6 +26,10 @@
 			$('#search').toggleClass("is-active");
 		});
 
+		$('.js-openrow').click(function () {
+			$('#row').toggleClass("is-open");
+		});
+
 
 			$('.js-openlegend').click(function () {
 			$('#legend').toggleClass("is-active");
@@ -36,82 +40,6 @@
 	</script>
 
 	<style>
-
-
-/* #vi_forms
-================================================== */
-/*Define Accordion box*/
-		form {
-			color: #343434;
-			overflow: hidden;
-			width: 100%;
-		}
-
-		form fieldset {
-			width: 100%;
-			overflow: hidden;
-			color: #333;
-			border: 0;
-			padding: 0;
-			transition: all 1s ease;
-			margin: 0;
-			margin-top: 10px;
-		}
-
-		form fieldset .legend {
-			min-width: 580px;
-			width: 100%;
-			position: relative;
-		}
-
-		form fieldset .legend a,
-		legend a:visited {
-			padding: 0 0 0 15px;
-			line-height: 40px;
-			display: block;
-			color: #555;
-			text-decoration: none;
-			background-color: #eee;
-			font-weight: 700;
-			border: 1px solid #ccc;
-			cursor: pointer;
-
-		}
-
-		form fieldset .legend a span {
-			display: inline-block;
-			float: right;
-			color: #fff;
-			width: 40px;
-			text-align: center;
-			font-weight: bold;
-			transition: all 1s ease;
-		}
-
-		form fieldset.is-inactive .legend a span {
-			display: inline-block;
-			float: right;
-			width: 40px;
-			text-align: center;
-			font-weight: 900;
-			color: #343434;
-			font-size: 1.8em;
-		}
-
-		form fieldset.is-active .legend a span {
-			transform: rotate(45deg);
-
-		}
-
-		form fieldset.is-inactive .vi-section {
-			max-height: 0px;
-			transition: all 1s ease;
-			overflow: hidden;
-		}
-
-		form fieldset.is-active .vi-section {
-			max-height: 9000px;
-		}
 
 
 	</style>
@@ -335,15 +263,25 @@
 										</td>
 										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn">+</button></th>
 									</tr>
-									<tr class="tableBody-row">
+									<tr class="tableBody-row" id="row">
 										<td class="tableBody-cell">
 											<div class="table-content">
-												<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
-												<span class="table-imageCaption">Caption</span>
-												<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
-												<span class="table-imageCaption">Caption</span>
-												<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
-												<span class="table-imageCaption">Caption</span>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
 											</div>
 										</td>
 										<td class="tableBody-cell">2</td>
@@ -352,26 +290,24 @@
 												th zeigt die Zellen einer HTML-Tabelle als Tabellenkopf. In Kopfzellen können Überschriften und Informationen über die Spalten oder Zeilen einer Tabelle stehen. Ohne CSS zeigt th den Inhalt der Tabellenzelle fett und zentriert.
 											</div>
 										</td>
-										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn">+</button></th>
+										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn js-openrow">+</button></th>
 									</tr>
 									<tr class="tableBody-row">
 										<td class="tableBody-cell">1</td>
 										<td class="tableBody-cell">2</td>
 										<td class="tableBody-cell">3</td>
-										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn">+</button></th>
+										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn js-openrow">+</button></th>
 									</tr>
 								</tbody>
 							</table>
 
 							<form class="viurForm">
-								<fieldset  id="legend" class="vi-set vi-set-vAllgemein is-inactive" name="Allgemein">
+								<fieldset id="legend" class="vi-set vi-set-vAllgemein" name="Allgemein">
 
-
-
-									<legend class="legend">
-										<a class="js-openlegend">Allgemein
-										<span>+</span>
-											</a>
+									<legend class="vi-legend">
+										<div class="vi-legendBtn js-openlegend">Allgemein
+										<span class="vi-legendPlus">+</span>
+											</div>
 									</legend>
 
 									<section class="vi-section">
@@ -406,13 +342,6 @@
 												</select>
 											</div>
 										</div>
-
-
-										affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
-										<br/>affe <br/>affe <br/>affe <br/>
-										affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe <br/>affe
-										<br/>
-
 										<div class="vi-bone vi-textBone vi-textBone-vDescr">
 											<label class="label vi-label vi-textLabel vi-textLabel-vDescr"
 												   for="vi_0_db_produkt_edit_Allgemein_bn_descr">Beschreibung</label>
@@ -575,12 +504,10 @@
 
 								<fieldset  id="legend" class="vi-set vi-set-vAllgemein is-inactive" name="Allgemein">
 
-
-
-									<legend class="legend">
-										<a class="js-openlegend">Allgemein 02
-										<span>+</span>
-											</a>
+									<legend class="vi-legend">
+										<div class="vi-legendBtn js-openlegend">Allgemein 02
+										<span class="vi-legendPlus">+</span>
+											</div>
 									</legend>
 
 									<section class="vi-section">
