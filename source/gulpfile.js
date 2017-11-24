@@ -7,165 +7,199 @@ var appDescription = 'This is my application';
 var developerName = 'Mausbrand Infosys';
 var developerURL = 'http://mausbrand.de/';
 
-var backgroundColor = '#020307'; // Background color of app icons.
+var backgroundColor = '#fff'; // Background color of app icons.
 
 var srcpaths = {
   less: './less/**/*.less',
-  icons: './icons/**/*.svg',
   images: './images/**/*',
+  icons: './embedsvg/icons/**/*',
+  logos: './embedsvg/logos/**/*',
   meta: './meta/*'
 };
 
 var destpaths = {
   css: '../appengine/static/css',
-  html: '../appengine/html',    
+  html: '../appengine/html',
   index: '../appengine/html/index.html',
   webfonts: '../appengine/static/webfonts',
   images: '../appengine/static/images',
+  embedsvg: '../appengine/html/embedsvg',
   meta: '../appengine/static/meta',
 };
 
 // Variables and requirements
 
-var gulp = require('gulp');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
 
-var less = require('gulp-less');
-var path = require('path');
+const less = require('gulp-less');
+const path = require('path');
 
-var postcss = require('gulp-postcss');
-var zindex = require('postcss-zindex');
-var autoprefixer = require('gulp-autoprefixer');
-var focus = require('postcss-focus');
-var nocomments = require('postcss-discard-comments');
-var nano = require('gulp-cssnano');
+const postcss = require('gulp-postcss');
+const zindex = require('postcss-zindex');
+const autoprefixer = require('gulp-autoprefixer');
+const focus = require('postcss-focus');
+const nocomments = require('postcss-discard-comments');
+const nano = require('gulp-cssnano');
+const jmq = require('gulp-join-media-queries');
 
-var stylelint = require('stylelint');
-var stylelintConfig = require('stylelint-config-standard'); 
+const svgmin = require('gulp-svgmin');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+const cheerio = require('gulp-cheerio');
 
-var svgstore = require('gulp-svgstore');
-var svgmin = require('gulp-svgmin');
-var rename = require('gulp-rename');
-var inject = require('gulp-inject');
+const favicons = require('gulp-favicons');
 
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
-
-var favicons = require('gulp-favicons');
-
-var psi = require('psi');
-var psikey = '';
-
-// Please feel free to use the `nokey` option to try out PageSpeed
-// Insights as part of your build process. For more frequent use,
-// we recommend registering for your own API key. For more info:
-// https://developers.google.com/speed/docs/insights/v2/getting-started
-
-gulp.task('mobile', function () {
-    return psi(appURL, {
-        // key: psikey
-        nokey: 'true',
-        strategy: 'mobile',
-    }).then(function (data) {
-        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-        console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
-    });
-});
-
-gulp.task('desktop', function () {
-    return psi(appURL, {
-        nokey: 'true',
-        // key: psikey,
-        strategy: 'desktop',
-    }).then(function (data) {
-        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-    });
-});
-
+// compilation and postproduction of LESS to CSS
 gulp.task('css', function () {
     var processors = [
     	nocomments, // discard comments
     	focus, // add focus to hover-states
     	zindex, // reduce z-index values
-    	autoprefixer, // add vendor prefixes
-        require('stylelint')(stylelintConfig), // lint the css  
-        require('postcss-font-magician')({
-   			hosted: destpaths.webfonts
-		}) // import fonts   
     ];
-    return gulp.src('./less/viur.less')
+    return gulp.src('../appengine/static/css/style.less')
         .pipe(less({
       		paths: [ path.join(__dirname, 'less', 'includes') ]
     	})) // compile less to css
-        .pipe(postcss(processors)) // clean up css
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        })) // add vendor prefixes
+		.pipe(postcss(processors)) // clean up css
+		.pipe(jmq({
+			log: true
+		}))
         .pipe(gulp.dest(destpaths.css)) // save cleaned version
         .pipe(nano()) // minify css
-        .pipe(rename('style.min.css')) // save minified version 
+        .pipe(rename('style.min.css')) // save minified version
     	.pipe(gulp.dest(destpaths.css));
 });
 
-gulp.task('svgstore', function () {
-	var svgs = gulp
-        .src(srcpaths.icons)
-        .pipe(svgmin(function (file) {
-            return {
-                plugins: [{
-                    cleanupIDs: {
-                        prefix: 'vi-',
-                        minify: true
-                    }
-                }]
-            }
-        })) // clean up and minify svg
-        .pipe(rename({prefix: 'vi-'})) // add vi- prefix to IDs
-        .pipe(svgstore({ inlineSvg: true })); // merge all svg into one file as symbols
-
-	function fileContents (filePath, file) {
-        return file.contents.toString();
-    }
-
-	return gulp
-     	.src('../appengine/html/index.html') // inject merged svg into index.html
-        .pipe(inject(svgs, { transform: fileContents }))       
-        .pipe(gulp.dest('../appengine/html'));
+gulp.task('fr-css', function () {
+    var processors = [
+    	nocomments, // discard comments
+    	focus, // add focus to hover-states
+    	zindex, // reduce z-index values
+    ];
+    return gulp.src('../appengine/static/css/style-fr.less')
+        .pipe(less({
+      		paths: [ path.join(__dirname, 'less', 'includes') ]
+    	})) // compile less to css
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        })) // add vendor prefixes
+		.pipe(postcss(processors)) // clean up css
+		.pipe(jmq({
+			log: true
+		}))
+        .pipe(gulp.dest(destpaths.css)) // save cleaned version
+        .pipe(nano()) // minify css
+        .pipe(rename('style-fr.min.css')) // save minified version
+    	.pipe(gulp.dest(destpaths.css));
 });
 
-gulp.task ('images', function () {
-	return gulp.src(srcpaths.images)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(destpaths.images));
+gulp.task('admin-css', function () {
+    var processors = [
+    	nocomments, // discard comments
+    	focus, // add focus to hover-states
+    	zindex, // reduce z-index values
+    ];
+    return gulp.src('../appengine/static/css/admin.less')
+        .pipe(less({
+      		paths: [ path.join(__dirname, 'less', 'includes') ]
+    	})) // compile less to css
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        })) // add vendor prefixes
+		.pipe(postcss(processors)) // clean up css
+		.pipe(jmq({
+			log: true
+		}))
+        .pipe(gulp.dest(destpaths.css)) // save cleaned version
+        .pipe(nano()) // minify css
+        .pipe(rename('admin.min.css')) // save minified version
+    	.pipe(gulp.dest(destpaths.css));
 });
 
-gulp.task ('meta', function () {
-    return gulp.src(srcpaths.meta)
-		.pipe(favicons({
-        appName: appName,
-        appDescription: appDescription,
-        developerName: developerName,
-        developerURL: developerURL,
-        background: backgroundColor,
-        path: destpaths.meta,
-        url: appURL,
-        display: "standalone",
-        orientation: "portrait",
-        version: 1.0,
-        logging: false,
-        online: false,
-        html: destpaths.index,
-        replace: true
-    	}))
-		.pipe(gulp.dest(destpaths.meta));
+// reduce images for web
+gulp.task('images', function () {
+  return gulp.src(srcpaths.images)
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest(destpaths.images));
+});
+
+gulp.task ('icons', function () {
+	return gulp.src(srcpaths.icons)
+	.pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox: false}],
+		use: [pngquant()]
+	}))
+    .pipe(cheerio({
+      run: function ($, file) {
+        $('style').remove()
+        $('[id]').removeAttr('id')
+        //$('[class]').removeAttr('class')
+        $('[fill]').removeAttr('fill')
+        $('svg').addClass('icon')
+      },
+      parserOptions: {xmlMode: true}
+    }))
+	.pipe(rename({prefix: "icon-"}))
+	.pipe(gulp.dest(destpaths.embedsvg));
+});
+
+gulp.task ('logos', function () {
+	return gulp.src(srcpaths.logos)
+	.pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox: false}],
+		use: [pngquant()]
+	}))
+    .pipe(cheerio({
+      run: function ($, file) {
+        $('svg').addClass('logo')
+      },
+      parserOptions: {xmlMode: true}
+    }))
+	.pipe(rename({prefix: "logo-"}))
+	.pipe(gulp.dest(destpaths.embedsvg));
+});
+
+// crop and resize one meta image to different favicon formats.
+gulp.task('meta', function () {
+  return gulp.src(srcpaths.meta)
+    .pipe(favicons({
+      appName: appName,
+      appDescription: appDescription,
+      developerName: developerName,
+      developerURL: developerURL,
+      background: backgroundColor,
+      path: destpaths.meta,
+      url: appURL,
+      display: "standalone",
+      orientation: "portrait",
+      version: 1.0,
+      logging: false,
+      online: false,
+      html: destpaths.index,
+      replace: true
+    }))
+    .pipe(gulp.dest(destpaths.meta));
 });
 
 gulp.task('watch', function () {
    gulp.watch(srcpaths.less, ['css']);
-   gulp.watch(srcpaths.icons, ['svgstore']);
+   gulp.watch(srcpaths.icons, ['icons']);
+   gulp.watch(srcpaths.logos, ['logos']);
    gulp.watch(srcpaths.images, ['images']);
    gulp.watch(srcpaths.meta, ['meta']);
 });
 
-gulp.task('default', ['css', 'svgstore', 'images', 'meta']);
+gulp.task('default', ['css','fr-css', 'admin-css', 'images', 'icons', 'logos', 'meta']);

@@ -9,22 +9,21 @@
 @import "foundation/reset"; // resets all browsers to the same base state.
 
 // Fundamental parts: positioning, type and utilities
-@import "foundation/appconf"; // variables and constants.
-@import "foundation/basic"; // classic basic styling.
-@import "foundation/util"; // utility classes.
-@import "foundation/bar"; // horizontal bars.
+@import "/ignite/less/foundation/appconf"; // variables and constants.
+@import "/ignite/less/foundation/basic"; // classic basic styling.
 @import "foundation/appwrap"; // page wrappers.
 
 // Generic elements: buttons, forms and messages
-@import "generic/button"; // some classic buttons.
-@import "generic/form"; // inputs, selects and other form elements.
-@import "generic/tooltip"; // lightweight tooltips.
-@import "generic/badge"; // badges and marker.
-@import "generic/message"; // hints, errors, warnings etc.
-@import "generic/popup"; // popup dialog messages.
-@import "generic/spinner"; // loading state for ajax requests.
+@import "/ignite/less/generic/bar"; // horizontal bars.
+@import "/ignite/less/generic/button"; // some classic buttons.
+@import "/ignite/less/generic/form"; // inputs, selects and other form elements.
+@import "/ignite/less/generic/message"; // hints, errors, warnings etc.
 
 // Objects
+@import "objects/popup"; // popup dialog messages.
+@import "objects/tooltip"; // lightweight tooltips.
+@import "objects/badge"; // badges and marker.
+@import "objects/spinner"; // loading state for ajax requests.
 @import "objects/progress";
 @import "objects/pagination";
 @import "objects/image"; // base64 encoded images, image shapes and thumbnails.
@@ -42,15 +41,17 @@
 @import "objects/viurform";
 
 // Configuration and Mixins
-@import "tools/zindex"; // organize your z-indexes.
-@import "tools/state"; // is-, has-, no- etc.
+@import "/ignite/less/tools/util"; // utility classes.
+@import "/ignite/less/tools/zindex"; // organize your z-indexes.
+@import "/ignite/less/tools/state"; // is-, has-, no- etc.
+@import "/ignite/less/tools/border";
+@import "/ignite/less/tools/mediaqueries"; // really simple media queries.
+@import "/ignite/less/tools/order";
+@import "/ignite/less/tools/position";
+@import "/ignite/less/tools/shadow"; // material design shadow mixin.
+@import "/ignite/less/tools/util"; // utility classes.
 
-// Media Queries
-@import "tools/mediaqueries"; // really simple media queries.
 
 
-/* Vi Custom Styling */
-@btnBackgroundColor: #f7f7f7;
-.btn-vSmall {border: 1px solid #999!important;}
 
 
