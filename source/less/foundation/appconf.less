@@ -5,19 +5,15 @@
 
 // Color and Shadow Sets
 @mainColor: #d00f1c; // The corporate color - defining most of the looks.
-@masterGrey: #575756; // A color used to sit next to the maincolor.
+@complementColor: #575756; // A color used to sit next to the maincolor.
 @textColor: #595956;
+@invTextColor: #f4f4f4;
 @backgroundColor: #f5f5f5;
 
 @successColor: #00965e; // Green
-@errorColor: #f7a600; // Orange
+@warnColor: #f7a600; // Orange
 @failColor: #cd1619; // Red
 @hintColor: #1c9bd8; // Blue
-
-@defaultShadow: 0;
-@defaultShadowColor: #000;
-@defaultBorderWidth: 1px;
-@defaultBorderRadius: 1px;
 
 // Font Stacks
 @bodyFonts: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; // Default font stack.
@@ -25,10 +21,19 @@
 @monoFonts: 'Source Code Pro', Courier, monospace; // Fonts for code pieces.
 
 // Font Sizes
+@defaultLineHeight: 1.3;
 @fontSizeSmall: 16px;
 @fontSizeMedium: 17px;
 @fontSizeLarge: 19px;
 @fontSizeExtraLarge: 20px;
+
+// Buttons and Forms
+@defaultPadding: .2em;
+@defaultMargin: .25em;
+@defaultShadow: 0;
+@defaultShadowColor: #000;
+@defaultBorderWidth: 0;
+@defaultBorderRadius: 8px;
 
 // Spaces
 @outerSpace: 20px; // Space around objects, boxes etc.
@@ -37,6 +42,7 @@
 @gridSpace: 20px; // Space between grid items.
 
 // Width, Height and Media Queries
+@pageWidth: 1400px; // max-width of the centered container.
 @paragraphWidth: 720px; // max-width of text paragraphs.
 
 @breakSmall: 37.5em; // smart phones: 600px / 16px = 37.5em;

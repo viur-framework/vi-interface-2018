@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* Vi Item */
+
+// Prefixes and objects:
+// .vi-item-
+
+
+.vi-item {
+  background-color:#fff;
+  padding:3px 5px;
+  display:flex;
+  border-bottom: 1px solid #dadad9;
+  &.not-active {
+    background-color: #f5f5f5;
+    & .vi-icon {
+      background-color: #ccc;
+    }
+  }
+  &.is-active {
+    background-color: #cc0000;
+    color: #fff;
+    border-bottom-color: #770000;
+    & .vi-icon {
+      background-color: #fff;
+      color: #cc0000;
+    }
+  }
+}
+
+
+
+.modulbar .vi-item {
+  min-height:50px;
+}
+
+.tabbar .vi-item {
+  min-height: 30px;
+  flex:1;
+}
+
+.vi-icon {
+  height: 44px;
+  width: 44px;
+  line-height: 44px;
+  background-color: #575756;
+  border-radius:8px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  align-self: center;
+}
+
+.vi-icon-small {
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  font-size: .7em;
+  border-radius: 4px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.vi-item-content {
+  flex:1;
+  align-self: center;
+}
+
+.vi-icon + .vi-item-content {
+  margin-left: 13px;
+}
+
+.vi-item-headline {
+  font-weight: lighter;
+}
+
+.vi-item-subline {
+  font-size: .8em;
+  font-weight: bold;
+}
+
+.vi-item-action {
+  align-self: center;
+  font-size: 1.2em;
+  padding: 2px;
+  color: #575756;
+}
+
+.is-active .vi-item-action {
+  color: #fff;
+}
+
+.not-active .vi-item-action {
+  color: #ccc;
+}

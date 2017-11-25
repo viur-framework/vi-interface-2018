@@ -17,70 +17,12 @@
 
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
-
-	<script>
-
-		$(document).ready(function () {
-
-		$('.js-opensearch').click(function () {
-			$('#search').toggleClass("is-active");
-		});
-
-		$('.js-openrow').click(function () {
-			$('#row').toggleClass("is-open");
-		});
-
-
-			$('.js-openlegend').click(function () {
-			$('#legend').toggleClass("is-active");
-		});
-
-					});
-
-	</script>
-
-	<style>
-
-
-	</style>
-
 </head>
 
 
 <body>
 
 <div class="master-wrap">
-
-	<!--<div class="alert-center">
-		<div class="alert has-icon i-heart">
-			<h4 class="alert-headline">Advice!</h4>
-			<button class="alert-close">
-				<img class="alert-closeImg" src="../static/icons/actions/cancel.svg"/>
-			</button>
-			<p>This gives some advice.</p>
-		</div>
-		<div class="alert alert-vSuccess has-icon i-check">
-			<h4 class="alert-headline">Success!</h4>
-			<button class="alert-close">
-				<img class="alert-closeImg" src="../static/icons/actions/cancel.svg"/>
-			</button>
-			<p>This was successful.</p>
-		</div>
-		<div class="alert alert-vWarn has-icon i-flash">
-			<h4 class="alert-headline">Warning!</h4>
-			<button class="alert-close">
-				<img class="alert-closeImg" src="../static/icons/actions/cancel.svg"/>
-			</button>
-			<p>This is a warning.</p>
-		</div>
-		<div class="alert alert-vError has-icon i-cross">
-			<h4 class="alert-headline">Error!</h4>
-			<button class="alert-close">
-				<img class="alert-closeImg" src="../static/icons/actions/cancel.svg"/>
-			</button>
-			<p>This was a mistake.</p>
-		</div>
-	</div>-->
 
 	<div class="top-wrap">
 
@@ -131,61 +73,63 @@
 		<aside class="modul-wrap">
 			<!--<header class="modulbar-top">test head</header>-->
 			<nav class="modulbar-nav">
-				<ul class="modulbar-navList">
-					<li class="modulbar-navItem">
-						<button class="modulbar-navBtn">
-							<img class="modulbar-navImg" src="../static/icons/modules/heart.svg" />
-							<span class="modulbar-navName">test</span>
-						</button>
-						<ul class="modulbar-navList modulbar-navList-vSub">
-							<li class="modulbar-navItem modulbar-navItem-vSub">
-								<button class="modulbar-navBtn modulbar-navBtn-vSub">
-									<img class="modulbar-navImg modulbar-navImg-vSub" src="../static/icons/modules/heart.svg" />
-									<span class="modulbar-navName modulbar-navName-vSub">test</span>
-									<b class="modulbar-navCloseBtn"><img class="modulbar-navCloseImg" src="../static/icons/actions/cancel.svg"/></b>
-								</button>
-
-							</li>
-							<ul class="modulbar-navList modulbar-navList-vSubSub">
-								<li class="modulbar-navItem modulbar-navItem-vSubSub">
-									<button class="modulbar-navBtn modulbar-navBtn-vSubSub">
-										<img class="modulbar-navImg modulbar-navImg-vSubSub" src="../static/icons/modules/heart.svg" />
-										<span class="modulbar-navName modulbar-navName-vSubSub">test</span>
-										<b class="modulbar-navCloseBtn"><img class="modulbar-navCloseImg" src="../static/icons/actions/cancel.svg"/></b>
-									</button>
-								</li>
-							</ul>
-						</ul>
-					</li>
-					<li class="modulbar-navItem">
-						<button class="modulbar-navBtn">
-							<img class="modulbar-navImg" src="../static/icons/modules/heart.svg" />
-							<span class="modulbar-navName">test</span>
-						</button>
-						<ul class="modulbar-navList modulbar-navList-vSub">
-							<li class="modulbar-navItem modulbar-navItem-vSub">
-								<button class="modulbar-navBtn modulbar-navBtn-vSub">
-									<img class="modulbar-navImg modulbar-navImg-vSub" src="../static/icons/modules/heart.svg" />
-									<span class="modulbar-navName modulbar-navName-vSub">test</span>
-								</button>
-							</li>
-							<ul class="modulbar-navList modulbar-navList-vSubSub">
-								<li class="modulbar-navItem modulbar-navItem-vSubSub">
-									<button class="modulbar-navBtn modulbar-navBtn-vSubSub">
-										<img class="modulbar-navImg modulbar-navImg-vSubSub" src="../static/icons/modules/heart.svg" />
-										<span class="modulbar-navName modulbar-navName-vSubSub">test</span>
-									</button>
-								</li>
-							</ul>
-						</ul>
-					</li>
-										<li class="modulbar-navItem">
-						<button class="modulbar-navBtn">
-							<img class="modulbar-navImg" src="../static/icons/modules/heart.svg" />
-							<span class="modulbar-navName">test</span>
-						</button>
-										</li>
-				</ul>
+				<div class="vi-item">
+				<div class="vi-icon vi-icon-small">
+					A
+				</div>
+				<div class="vi-item-content">
+					<div class="vi-item-subline">
+						Subline
+					</div>
+					<div class="vi-item-headline">
+						Headline
+					</div>
+					<!--<div class="vi-item-descr">
+						Descr
+					</div>-->
+				</div>
+				<div class="vi-item-action">
+					&times;
+				</div>
+			</div>
+			<div class="vi-item">
+				<div class="vi-icon vi-icon-small">
+					A
+				</div>
+				<div class="vi-item-content">
+					<div class="vi-item-subline">
+						Subline
+					</div>
+					<div class="vi-item-headline">
+						Headline
+					</div>
+					<!--<div class="vi-item-descr">
+						Descr
+					</div>-->
+				</div>
+				<div class="vi-item-action">
+					&times;
+				</div>
+			</div>
+			<div class="vi-item is-active">
+				<div class="vi-icon">
+					B
+				</div>
+				<div class="vi-item-content">
+					<div class="vi-item-subline">
+						Subline
+					</div>
+					<div class="vi-item-headline">
+						Headline
+					</div>
+					<!--<div class="vi-item-descr">
+						Descr
+					</div>-->
+				</div>
+				<div class="vi-item-action">
+					&times;
+				</div>
+			</div>
 			</nav>
 			<!--<footer class="modulbar-foot">test foot</footer>-->
 		</aside>

@@ -24,7 +24,7 @@ var destpaths = {
   webfonts: '../appengine/static/webfonts',
   images: '../appengine/static/images',
   embedsvg: '../appengine/html/embedsvg',
-  meta: '../appengine/static/meta',
+  meta: '../appengine/static/meta'
 };
 
 // Variables and requirements
@@ -57,7 +57,7 @@ gulp.task('css', function () {
     	focus, // add focus to hover-states
     	zindex, // reduce z-index values
     ];
-    return gulp.src('../appengine/static/css/style.less')
+    return gulp.src('./less/viur.less')
         .pipe(less({
       		paths: [ path.join(__dirname, 'less', 'includes') ]
     	})) // compile less to css
@@ -72,54 +72,6 @@ gulp.task('css', function () {
         .pipe(gulp.dest(destpaths.css)) // save cleaned version
         .pipe(nano()) // minify css
         .pipe(rename('style.min.css')) // save minified version
-    	.pipe(gulp.dest(destpaths.css));
-});
-
-gulp.task('fr-css', function () {
-    var processors = [
-    	nocomments, // discard comments
-    	focus, // add focus to hover-states
-    	zindex, // reduce z-index values
-    ];
-    return gulp.src('../appengine/static/css/style-fr.less')
-        .pipe(less({
-      		paths: [ path.join(__dirname, 'less', 'includes') ]
-    	})) // compile less to css
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        })) // add vendor prefixes
-		.pipe(postcss(processors)) // clean up css
-		.pipe(jmq({
-			log: true
-		}))
-        .pipe(gulp.dest(destpaths.css)) // save cleaned version
-        .pipe(nano()) // minify css
-        .pipe(rename('style-fr.min.css')) // save minified version
-    	.pipe(gulp.dest(destpaths.css));
-});
-
-gulp.task('admin-css', function () {
-    var processors = [
-    	nocomments, // discard comments
-    	focus, // add focus to hover-states
-    	zindex, // reduce z-index values
-    ];
-    return gulp.src('../appengine/static/css/admin.less')
-        .pipe(less({
-      		paths: [ path.join(__dirname, 'less', 'includes') ]
-    	})) // compile less to css
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        })) // add vendor prefixes
-		.pipe(postcss(processors)) // clean up css
-		.pipe(jmq({
-			log: true
-		}))
-        .pipe(gulp.dest(destpaths.css)) // save cleaned version
-        .pipe(nano()) // minify css
-        .pipe(rename('admin.min.css')) // save minified version
     	.pipe(gulp.dest(destpaths.css));
 });
 
@@ -155,23 +107,6 @@ gulp.task ('icons', function () {
 	.pipe(gulp.dest(destpaths.embedsvg));
 });
 
-gulp.task ('logos', function () {
-	return gulp.src(srcpaths.logos)
-	.pipe(imagemin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	}))
-    .pipe(cheerio({
-      run: function ($, file) {
-        $('svg').addClass('logo')
-      },
-      parserOptions: {xmlMode: true}
-    }))
-	.pipe(rename({prefix: "logo-"}))
-	.pipe(gulp.dest(destpaths.embedsvg));
-});
-
 // crop and resize one meta image to different favicon formats.
 gulp.task('meta', function () {
   return gulp.src(srcpaths.meta)
@@ -197,9 +132,8 @@ gulp.task('meta', function () {
 gulp.task('watch', function () {
    gulp.watch(srcpaths.less, ['css']);
    gulp.watch(srcpaths.icons, ['icons']);
-   gulp.watch(srcpaths.logos, ['logos']);
    gulp.watch(srcpaths.images, ['images']);
    gulp.watch(srcpaths.meta, ['meta']);
 });
 
-gulp.task('default', ['css','fr-css', 'admin-css', 'images', 'icons', 'logos', 'meta']);
+gulp.task('default', ['css', 'images', 'icons', 'meta']);
