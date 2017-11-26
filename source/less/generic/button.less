@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* BUTTONS */
+
+// Prefixes and objects:
+// .btn-
+// .btnGroup
+
+.btn {
+  .btn(
+    @btnBackgroundColor:#fff,
+    @btnPadding: @defaultPadding,
+    @btnMargin: @defaultMargin,
+    @btnBorderWidth: 0,
+    @btnBorderRadius: 4px,
+    @btnShadow: 0,
+    @btnShadowHover: 1,
+    @btnShadowColor: @defaultShadowColor);
+}
+
+.btn-vPrimary {
+  .colorizeBtn(
+    @backgroundColor: @successColor,
+    @btnBorderWidth: 0,
+    @btnShadow: 0,
+    @btnShadowHover: 1);
+}

@@ -4,102 +4,20 @@
 // Prefixes and objects:
 // .topbar-
 
-
-
-.topbar-nav {
-  position: relative;
-  font-size: .8em;
-  line-height: 2.4em;
-  float: right;
+.topbar {
+  display: flex;
+  min-height:50px;
+  border-bottom: 2px solid @mainColor;
+  .boxShadow(1, #000);
+  .zIndex('nav',50);
 }
 
-.topbar-navItem {
-  float: left;
-  color: #777;
+.topbar .item:not(:first-of-type) .item-content {
+  margin-left: 5px;
 }
 
-.topbar-navBtn {
-  border: 0;
-  border-left: 1px solid #ccc;
-  border-bottom: 2px solid #BE1622;
-  color: #555;
-  position: relative;
-  padding: 0 14px;
-  line-height: 38px;
-  float: left;
-  text-decoration: none;
-  text-shadow: none;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-  -webkit-appearance: none;
-  background-color: #fff;
-  font-weight: 700;
-  white-space: nowrap;
-  max-width: 250px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  .is-disabled & {color: #444;}
-}
-
-/* Icon Links */
-.topbar-navBtn.has-icon {
-  color: transparent;
-  letter-spacing: -1em;
-  overflow: hidden;
-  min-width: 48px;
-  padding: 0 7px;
-}
-
-.topbar-navBtn:hover {
-  color: #555;
-  background-color: #f7f7f7;
-  text-decoration: none;
-  border-bottom: 2px solid #ff1122;
-}
-
-.topbar-navBtn.has-icon:before {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  width: 38px;
-  height: 38px;
-  content: ' ';
-  position: relative;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* Action Icons */
-.topbar-navBtn.has-icon.accountmgnt:before {
-  background-image: url('../icons/actions/nav-accountmgnt.svg');
-}
-
-.topbar-navBtn.has-icon.logout:before {
-  background-image: url('../icons/actions/nav-logout.svg');
-}
-
-.topbar-navBtn.has-icon.tasks:before {
-  background-image: url('../icons/actions/nav-tasks.svg');
-}
-
-.topbar-navBtn.has-icon.language:before {
-  background-image: url(../icons/actions/nav-language.svg);
-}
-
-.topbar-navBtn.has-icon:hover {
-  overflow: visible;
-  min-width: 130px;
-  letter-spacing: normal;
-}
-
-.vi-viur-icon {
-  background-image: url(../icons/actions/vi-viur-icon.svg);
-  background-size: cover;
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  float: left;
+.topbar-logo {
+  background: @mainColor;
+  width: 50px;
+  height: 100%;
 }
