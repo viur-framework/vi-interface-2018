@@ -1,3 +1,8 @@
-interface/gulpfile.js
-interface/package.json
-interface/stylelintConfig.json
+node_modules
+*.db
+*.bak
+*.pyc
+.idea
+*.iml
+storage
+

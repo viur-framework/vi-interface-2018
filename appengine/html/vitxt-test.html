@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vitxt-test</title>
+
+	<style>
+		html {
+		  overflow-y: scroll;
+		  overflow-x: hidden;
+		  font-size: 16px;
+		}
+
+		body {
+		  margin: 0;
+		  background: #fafafa;
+		  overflow: hidden;
+		  font-size: 100.01%;
+		  line-height: 1.5;
+		  color: #222;
+		  font-family: 'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+		  -webkit-font-smoothing: antialiased;
+		  -webkit-text-size-adjust: 100%;
+		  min-height: 100vh;
+		}
+		.wrap {
+			width:80%;
+			margin: 0 auto;
+		}
+		.vitxt-link,
+		.vitxt-download {
+		  color: #d00f1c;
+		  text-decoration: none;
+		  outline: 0;
+		}
+
+		.vitxt-link:hover,
+		.vitxt-download:hover,
+		.vitxt-link:focus,
+		.vitxt-download:focus,
+		.vitxt-link:active,
+		.vitxt-download:active {
+		  color: #a00c16;
+		}
+
+		p a,
+		p a:visited {
+		  line-height: inherit;
+		}
+
+		.vitxt-tHeading {
+		  color: inherit;
+		  font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
+		  font-weight: normal;
+		  line-height: 1.6;
+		}
+
+		.vitxt-tHeading:not(:first-child) {
+		  margin-top: 1em;
+		}
+
+		.vitxt-tHeading a {
+		  font-weight: inherit;
+		  color: inherit;
+		}
+
+		.vitxt-tHeading-title {
+		  font-size: 2.1em;
+		  margin-bottom: .75em;
+		  color: #d00f1c;
+		}
+
+		.vitxt-tHeading-large {
+		  font-size: 1.7em;
+		  margin-bottom: .5em;
+		  color: #666666;
+		}
+
+		.vitxt-tHeading-medium {
+		  font-size: 1.5em;
+		  margin-bottom: .25em;
+		}
+
+		.vitxt-tHeading-small {
+		  font-size: 1.2em;
+		}
+
+		.vitxt-paragraph {
+		  line-height: 1.6;
+		  font-size: 1.1em;
+		}
+
+		.vitxt-paragraph:not(:last-of-type) {
+		  margin-bottom: 1em;
+		 }
+
+		.vitxt-aLeft {text-align: left;}
+		.vitxt-aRight {text-align: right;}
+		.vitxt-aCenter {text-align: center;}
+		.vitxt-aJustify {text-align: justify;}
+
+		.vitxt-indent {padding-left: 1.5em;}
+
+		.vitxt-fBold {font-weight: 700;}
+
+		.vitxt-fItalic {font-style: italic;}
+
+		.vitxt-tQuote {
+		  font-style: italic;
+		  font-size: 1.3em;
+		  color: #333;
+		  padding: 0 1em;
+		  border-left: 7px solid #333;
+		}
+
+		.vitxt-listUnorder {
+		  padding: 3px 1.5em;
+		  margin: 0;
+		  list-style-type: disc;
+		}
+
+		.vitxt-list .vitxt-listUnorder {
+		  padding: 3px 1.5em;
+		  list-style-type: square;
+		}
+
+		.vitxt-list .vitxt-list .vitxt-listUnorder {
+		  list-style-type: circle;
+		}
+
+		.vitxt-listOrder {
+		  padding: 3px 1.5em;
+		  margin: 0;
+		  list-style-type: decimal;
+		}
+
+		.vitxt-list .vitxt-listOrder {
+		  padding: 3px 1.5em;
+		  list-style-type: upper-roman;
+		}
+
+		.vitxt-list .vitxt-list .vitxt-listOrder {
+		  list-style-type: upper-alpha;
+		}
+
+		.vitxt-rule {
+			height:1px;
+			border:0;
+			border-bottom: 1px solid #ccc;
+			margin:1em 0;
+		}
+
+		.vitxt-image {
+			margin-bottom: 1em;
+			width: 30%;
+			height:auto;
+		}
+
+		.vitxt-image-left {
+			float:left;
+			margin-right:1em;
+		}
+
+		.vitxt-image-right {
+			float:right;
+			margin-left:1em;
+		}
+
+		.vitxt-image-block {
+			width:100%;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<div class="wrap">
+<div class="vitxt">
+	<h1 class="vitxt-tHeading vitxt-tHeading-title">Titel</h1>
+	<h2 class="vitxt-tHeading vitxt-tHeading-large">Überschrift (groß)</h2>
+	<h3 class="vitxt-tHeading vitxt-tHeading-medium">Überschrift (mittelgroß)</h3>
+	<h4 class="vitxt-tHeading vitxt-tHeading-small">Überschrift (klein)</h4>
+	<p class="vitxt-paragraph">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<blockquote class="vitxt-tQuote">
+		Blockquote
+	</blockquote>
+
+	<p class="vitxt-paragraph">
+		Lorem ipsum dolor <strong class="vitxt-fBold">eine starke Hervorhebung (Fett)</strong> sit amet,
+		consectetur adipiscing elit, <em class="vitxt-fItalic">Hervorhebung (Kursiv)</em> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, <sup class="vitxt-fSuper">Hochstellen</sup> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <sub class="vitxt-fSub">Tiefstellen</sub> Excepteur sint occaecat cupidatat non proident,
+		sunt in culpa qui <a class="vitxt-download" href="#" title="name" target="_blank">ein Download</a> officia deserunt mollit <a class="vitxt-link" href="#" title="name" target="_blank">ein Link</a> anim id est laborum.
+	</p>
+
+	<p class="vitxt-paragraph vitxt-aLeft">
+		Text align left: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<p class="vitxt-paragraph vitxt-aRight">
+		Text align right: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<p class="vitxt-paragraph vitxt-aCenter">
+		Text align center: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<p class="vitxt-paragraph vitxt-aJustify">
+		Text align justify: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+	<ul class="vitxt-list vitxt-listUnorder">
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement</li>
+	</ul>
+
+	<ol class="vitxt-list vitxt-listOrder">
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement
+			<ol class="vitxt-list vitxt-listOrder">
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement
+			<ol class="vitxt-list vitxt-listOrder">
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement</li>
+		<li class="vitxt-listItem">Listenelement</li>
+	</ol>
+		</li>
+	</ol>
+		</li>
+		<li class="vitxt-listItem">Listenelement</li>
+	</ol>
+
+	<div class="vitxt-indent">
+		<p class="vitxt-paragraph">
+			Text mit Einrückung: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+
+	<div class="vitxt-indent">
+		<div class="vitxt-indent">
+			<p class="vitxt-paragraph">
+				Text mit weiterer Einrückung: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+	</div>
+
+	<div class="vitxt-indent">
+		<div class="vitxt-indent">
+			<div class="vitxt-indent">
+				<p class="vitxt-paragraph">
+					Text mit weiterer Einrückung: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<hr class="vitxt-rule">
+	<p class="vitxt-paragraph">
+		<img class="vitxt-image vitxt-image-left" src="#" title="name" alt="name">
+		Bilder links: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<p class="vitxt-paragraph">
+		<img class="vitxt-image vitxt-image-right" src="#" title="name" alt="name">
+		Bild rechts: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<p class="vitxt-paragraph">
+		<img class="vitxt-image vitxt-image-block" src="#" title="name" alt="name">
+		Bild als Block: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* TOPBAR */
+
+// Prefixes and objects:
+// .topbar-
+
+.topbar {
+  display: flex;
+  min-height:50px;
+  border-bottom: 2px solid @mainColor;
+  .boxShadow(1, #000);
+  .zIndex('nav',50);
+}
+
+.topbar .item:not(:first-of-type) .item-content {
+  margin-left: 5px;
+}
+
+.topbar-logo {
+  background: @mainColor;
+  width: 50px;
+  height: 100%;
+}

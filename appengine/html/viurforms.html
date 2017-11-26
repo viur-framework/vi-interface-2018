@@ -178,5 +178,188 @@
 	</div>
 </article>
     
+
+	<style>
+		.vi-bone {display:flex;}
+		.vi-label {min-width:25%; align-self: flex-start; border-right-width: 0;}
+		.vi-boneTranslator {flex:1; display:flex;}
+		.vi-boneEditor {
+			flex:1;
+			display: flex;
+			min-width: 0;
+		}
+		.vi-selection {
+			display: flex;
+			min-width: 0;
+			flex: 1;
+			flex-direction: column;
+		}
+		.vi-relation {
+			display: flex;
+			flex: 1;
+		}
+		.vi-file {display: flex; min-width: 0; flex:1;}
+		.select {margin:6px;}
+		.vi-textarea {flex:1}
+	</style>
+
+
+
+    
+<article class="wrap">
+    <div class="bind">
+		<div class="content">
+			<form class="viurForm">
+				<fieldset class="vi-set vi-set-vAllgemein is-inactive" name="Allgemein">
+					<legend class="vi-legend">Allgemein</legend>
+
+					<section class="vi-section">
+
+						<div class="vi-bone vi-stringBone vi-stringBone-vName">
+							<label class="label vi-label vi-stringLabel vi-stringLabel-vName is-required" for="vi_0_db_produkt_edit_Allgemein_bn_name">Name</label>
+							<div class="vi-boneTranslator" id="vi_0_db_produkt_edit_Allgemein_bn_name">
+								<div class="vi-boneEditor">
+									<input class="input" type="text" class="lang_de">
+									<input class="input" type="text" class="lang_en" style="display: none;">
+									<input class="input" type="text" class="lang_fr" style="display: none;">
+									<input class="input" type="text" class="lang_it" style="display: none;">
+									<input class="input" type="text" class="lang_ru" style="display: none;">
+									<input class="input" type="text" class="lang_no" style="display: none;">
+									<input class="input" type="text" class="lang_se" style="display: none;">
+									<input class="input" type="text" class="lang_dk" style="display: none;">
+									<input class="input" type="text" class="lang_nl" style="display: none;">
+								</div>
+								<select class="select" name="kauftenauch" id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+									<option value="0">de</option>
+									<option value="1">en</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-textBone vi-textBone-vDescr">
+							<label class="label vi-label vi-textLabel vi-textLabel-vDescr" for="vi_0_db_produkt_edit_Allgemein_bn_descr">Beschreibung</label>
+							<div class="vi-boneTranslator" id="vi_0_db_produkt_edit_Allgemein_bn_descr">
+								<div class="vi-boneEditor">
+									<textarea class="textarea vi-textarea" style="display: none;"></textarea>
+									<div class="textarea vi-textarea vi-textBone-preview">
+									</div>
+									<button class="btn textedit icon btn-vEdit" type="button">Text bearbeiten</button>
+								</div>
+								<select class="select" name="kauftenauch" id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+									<option value="0">de</option>
+									<option value="1">en</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-fileBone vi-fileBone-vImage">
+							<label class="label vi-label vi-fileLabel vi-fileLabel-vImage" for="vi_0_db_produkt_edit_Allgemein_bn_image">Bild</label>
+							<div class="vi-boneEditor can-upload" id="vi_0_db_produkt_edit_Allgemein_bn_image">
+								<div class="vi-file">
+									<div class="vi-filePreview" style="background-image: url(https://lh3.googleusercontent.com/TQFr6JDH1tKAHO0fl80hFTCYwooKAuxdxe0wb6kYVadC3vvwQACAVy63p4y47VzEb86vNfKwp7pjBgm-MnwwkxLX=s150)">
+									</div>
+									<span class="vi-fileName">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+									<button class="vi-fileBtn-edit" type="button">Bearbeiten</button>
+									<button class="vi-fileBtn-delete" type="button">Entfernen</button>
+								</div>
+								<button class="btn has-icon i-select" type="button">Auswählen</button>
+								<div class="vi-dropzone">
+								</div>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-fileMultiBone vi-fileMultiBone-vImages">
+							<label class="label vi-label vi-fileMultiLabel vi-fileMultiLabel-vImages" for="vi_0_db_produkt_edit_Allgemein_bn_images">Feature-Bilder</label>
+							<div class="vi-boneEditor can-upload" id="vi_0_db_produkt_edit_Allgemein_bn_images">
+								<div class="vi-selection">
+									<div class="vi-file">
+										<div class="vi-filePreview" style="background-image: url(https://lh3.googleusercontent.com/TQFr6JDH1tKAHO0fl80hFTCYwooKAuxdxe0wb6kYVadC3vvwQACAVy63p4y47VzEb86vNfKwp7pjBgm-MnwwkxLX=s150)">
+										</div>
+										<span class="vi-fileName">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+										<button class="vi-fileBtn-edit" type="button">Bearbeiten</button>
+										<button class="vi-fileBtn-delete" type="button">Entfernen</button>
+									</div>
+									<div class="vi-file">
+										<div class="vi-filePreview" style="background-image: url(https://lh3.googleusercontent.com/TQFr6JDH1tKAHO0fl80hFTCYwooKAuxdxe0wb6kYVadC3vvwQACAVy63p4y47VzEb86vNfKwp7pjBgm-MnwwkxLX=s150)">
+										</div>
+										<span class="vi-fileName">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+										<button class="vi-fileBtn-edit" type="button">Bearbeiten</button>
+										<button class="vi-fileBtn-delete" type="button">Entfernen</button>
+									</div>
+								</div>
+								<button class="btn has-icon i-select" type="button">Auswählen</button>
+								<div class="vi-dropzone">
+								</div>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-selectOneBone vi-selectOneBone-vKauftenauch">
+							<label class="label vi-label vi-selectOneLabel vi-selectOneLabel-vKauftenauch" for="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">In "Kauften auch" anzeigen?</label>
+							<div class="vi-boneEditor inputGroup">
+								<select class="select" name="kauftenauch" id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+									<option value="0">Nein</option>
+									<option value="1">Ja</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-selectMultiBone vi-selectMultiBone-vBeschichtung">
+							<label class="label vi-label vi-selectMultiLabel vi-selectMultiLabel-vBeschichtung" for="vi_0_db_produkt_edit_Details_bn_beschichtung">Beschichtung</label>
+							<div id="vi_0_db_produkt_edit_Details_bn_beschichtung" class="vi-boneEditor inputGroup">
+								<div class="radio">
+									<input id="check0" class="radio-input" type="radio" name="radio1">
+									<label for="check0" class="radio-label">Nein</label>
+								</div>
+								<div class="radio">
+									<input id="check1" class="radio-input" type="radio" name="radio1">
+									<label for="check1" class="radio-label">Ja</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-relationalBone relational_serie relational is-related-serie">
+							<label class="label vi-label vi-relationalLabel vi-relationalLabel-vSerie" for="vi_0_db_produkt_edit_Allgemein_bn_serie">gehört zur Serie</label>
+							<div class="vi-boneEditor" id="vi_0_db_produkt_edit_Allgemein_bn_serie">
+								<div class="vi-relation inputGroup">
+									<input class="input" type="text" readonly="">
+									<button class="btn btn-vEdit has-icon i-edit" type="button">Bearbeiten</button>
+									<button class="btn btn-vDanger has-icon i-cancel" type="button">Entfernen</button>
+								</div>
+								<button class="btn btn-vPrimary has-icon i-select" type="button">Auswählen</button>
+							</div>
+						</div>
+
+						<div class="vi-bone vi-relationalMultiBone vi-relationalMultiBone-vWeitere is-related-produkt">
+							<label class="label vi-label vi-relationalMultiLabel vi-relationalMultiLabel-vWeitere" for="vi_0_db_produkt_edit_Allgemein_bn_weitere">ähnliche Produkte</label>
+							<div class="vi-boneEditor" id="vi_0_db_produkt_edit_Allgemein_bn_weitere">
+								<div class="vi-selection">
+									<div class="vi-relation inputGroup">
+										<span class="input is-readonly">Badewannenfaltwand, 3-teilig, D1410</span>
+										<button class="btn btn-vEdit has-icon i-edit" type="button">Bearbeiten</button>
+										<button class="btn btn-vDanger has-icon i-cancel" type="button">Entfernen</button>
+									</div>
+									<div class="vi-relation inputGroup">
+										<span class="input is-readonly">Badewannenfaltwand, 3-teilig D1420</span>
+										<button class="btn btn-vEdit has-icon i-edit" type="button">Bearbeiten</button>
+										<button class="btn btn-vDanger has-icon i-cancel" type="button">Entfernen</button>
+									</div>
+									<div class="vi-relation inputGroup">
+										<span class="input is-readonly">Badewannenfaltwand, 3-teilig mit Seitenwand</span>
+										<button class="btn btn-vEdit has-icon i-edit" type="button">Bearbeiten</button>
+										<button class="btn btn-vDanger has-icon i-cancel" type="button">Entfernen</button>
+									</div>
+								</div>
+								<button class="btn btn-vPrimary has-icon i-select" type="button">Auswählen</button>
+							</div>
+						</div>
+
+					</section>
+				</fieldset>
+
+			</form>
+		</div>
+	</div>
+</article>
+    
 </body>
 </html>
