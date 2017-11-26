@@ -1,0 +1,29 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "test bla",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9",
+    "gulp-autoprefixer": "^4.0",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-cssnano": "^2.1",
+    "gulp-favicons": "^2.2.5",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-join-media-queries": "0.0.1",
+    "gulp-less": "^3.3",
+    "gulp-postcss": "^7.0",
+    "gulp-rename": "^1.2",
+    "gulp-svgmin": "^1.2.1",
+    "gulp-svgstore": "^5.0.5",
+    "imagemin-pngquant": "^5.0.1",
+    "postcss-focus": "^2.0",
+    "postcss-font-magician": "^1.4.0",
+    "postcss-zindex": "^2.2"
+  }
+}

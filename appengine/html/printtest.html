@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		@page{
+			@top-center {
+				content:'TEST';
+			}
+		  @bottom-right {
+			content: counter(page);
+		  }
+		  @bottom-left {
+			content: counter(page);
+		  }
+		}
+@page
+{
+    size: letter;
+    margin: 27mm 16mm 27mm 16mm;
+    counter-increment: page;
+    @bottom-center
+    {
+        content: counter(page);
+        white-space: pre;
+        color: grey;
+        }
+    @top-center
+    {
+        content: 'Strategic Planning Concept';
+        color: grey;
+        border-bottom: solid 1px grey;
+    }
+    @top-left
+    {
+        content: ' \a \a \a ';
+        white-space: pre;
+        color: grey;
+        border-bottom: solid 1px grey;
+    }
+    @top-right
+    {
+        content: ' \a \a \a February 6, 2013';
+        white-space: pre;
+        color: grey;
+        border-bottom: solid 1px grey;
+    }
+}
+		h1 {
+		  string-set: doctitle content();
+		}
+	</style>
+</head>
+<body>
+	<h1>Du bist der Beste!</h1>
+</body>
+</html>

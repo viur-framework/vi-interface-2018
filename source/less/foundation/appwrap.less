@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* #APPLICATION WRAPPER */
+// Container to wrap up chunks of content over the whole width of the page.
+
+html {
+  overflow-y: hidden;
+}
+
+.vi-application {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  .zIndex('background',0);
+}
+
+.viewer-wrap {
+  width: 100%;
+  display: flex;
+  flex:1;
+  .zIndex('content',2);
+}
+
+.main-wrap {
+  flex:1 80%;
+  display: flex;
+  flex-direction: column;
+  z-index:-1;
+}
+
+.content-wrap {
+  width: 100%;
+  flex:1;
+  overflow-y: scroll;
+  .zIndex('content',0);
+}
+
+.content {
+  padding:0 @outerSpace;
+  margin:10px auto;
+}

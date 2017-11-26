@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<!-- meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Favicon -->
+	<link rel="icon" href="static/images/favicon.png" type="image/png"/>
+	<link rel="stylesheet" href="../static/css/viur.css"/>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+
+<div class="master-wrap">
+
+	<div class="top-wrap">
+
+		<div class="vi-viur-icon">
+
+		</div>
+
+
+		<nav class="topbar-nav" style="float: none">
+			<ul class="topbar-navList">
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn">Mausbrand</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn">Ansprechpartner und Teamkollegen</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn">Christopher Reinbothe</button>
+				</li>
+			</ul>
+		</nav>
+
+
+		<nav class="topbar-nav">
+
+
+			<ul class="topbar-navList">
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon language">language</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon tasks">tasks</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon accountmgnt" title="admin@oase-viur.appspot.com" >admin@oase-viur.appspot.com
+					</button>
+				</li>
+				<li class="topbar-navItem">
+					<button class="topbar-navBtn has-icon logout">Abmelden</button>
+				</li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<div class="viewer-wrap">
+
+		<aside class="modul-wrap">
+			<!--<header class="modulbar-top">test head</header>-->
+			<nav class="modulbar-nav">
+				<div class="item">
+				<div class="icon icon-small">
+					A
+				</div>
+				<div class="item-content">
+					<div class="item-subline">
+						Subline
+					</div>
+					<div class="item-headline">
+						Headline
+					</div>
+					<!--<div class="item-descr">
+						Descr
+					</div>-->
+				</div>
+				<div class="item-action">
+					&times;
+				</div>
+			</div>
+			<div class="item">
+				<div class="icon icon-small">
+					A
+				</div>
+				<div class="item-content">
+					<div class="item-subline">
+						Subline
+					</div>
+					<div class="item-headline">
+						Headline
+					</div>
+					<!--<div class="item-descr">
+						Descr
+					</div>-->
+				</div>
+				<div class="item-action">
+					&times;
+				</div>
+			</div>
+			<div class="item is-active">
+				<div class="icon">
+					B
+				</div>
+				<div class="item-content">
+					<div class="item-subline">
+						Subline
+					</div>
+					<div class="item-headline">
+						Headline
+					</div>
+					<!--<div class="item-descr">
+						Descr
+					</div>-->
+				</div>
+				<div class="item-action">
+					&times;
+				</div>
+			</div>
+			</nav>
+			<!--<footer class="modulbar-foot">test foot</footer>-->
+		</aside>
+
+
+		<div class="main-wrap">
+
+			<div class="action-wrap">
+				<div class="action-bar bar">
+					<div class="barGroup barGroup-vLeft">
+					<button class="btn btn-vSmall btn-vPrimary" type="button" title="Hinzufügen">Hinzufügen</button>
+					<button class="btn btn-vSmall has-icon just-icon i-edit-grey" type="button" title="Bearbeiten">Bearbeiten</button>
+					<button class="btn btn-vSmall  has-icon just-icon i-clone" type="button" title="Klonen">Klonen</button>
+					<button class="btn btn-vSmall  has-icon just-icon i-bin" type="button" title="Löschen">Löschen</button>
+					</div>
+
+					<div class="barGroup barGroup-vRight">
+
+
+						<form>
+    <select class="select select-vSmall" id="selectSmall">
+        <option>Deutsch</option>
+        <option>Englisch</option>
+        <option>Französisch</option>
+    </select>
+							</form>
+
+					<button class="btn btn-vSmall has-icon just-icon i-reload-grey" type="button">Klonen</button>
+					<button class="btn btn-vSmall has-icon just-icon i-settings-grey" type="button">Felder hinzufügen</button>
+						<button class="btn btn-vSmall has-icon just-icon i-eye" type="button">Felder hinzufügen</button>
+						<button class="btn btn-vSmall has-icon just-icon i-spyglass js-opensearch" type="button">Suche</button>
+					</div>
+
+				</div>
+
+				<div id="search" class="search-bar">
+					<div class="inputGroup">
+					<input class="input input-vSmall" type="text" placeholder="Suchbegriff...">
+					<button class="btn btn-vSmall btn-vPrimary" type="button" title="Hinzufügen">Los</button>
+				</div>
+					</div>
+
+			</div>
+
+			<div class="content-wrap">
+
+
+						<div class="content">
+
+							<table class="table viurTable">
+								<thead>
+									<tr class="tableHead-row">
+										<th class="tableHead-cell">1</th>
+										<th class="tableHead-cell">2</th>
+										<th class="tableHead-cell">3</th>
+										<td class="tableHead-cell tableInfo-cell"></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="tableBody-row">
+										<td class="tableBody-cell">
+											<div class="table-content">
+												th zeigt die Zellen einer HTML-Tabelle als Tabellenkopf. In Kopfzellen können Überschriften und Informationen über die Spalten oder Zeilen einer Tabelle stehen. Ohne CSS zeigt th den Inhalt der Tabellenzelle fett und zentriert.
+											</div>
+										</td>
+										<td class="tableBody-cell">
+											<div class="table-content">
+												th zeigt die Zellen einer HTML-Tabelle als Tabellenkopf. In Kopfzellen können Überschriften und Informationen über die Spalten oder Zeilen einer Tabelle stehen. Ohne CSS zeigt th den Inhalt der Tabellenzelle fett und zentriert.
+											</div>
+										</td>
+										<td class="tableBody-cell">
+											<div class="table-content">
+												th zeigt die Zellen einer HTML-Tabelle als Tabellenkopf. In Kopfzellen können Überschriften und Informationen über die Spalten oder Zeilen einer Tabelle stehen. Ohne CSS zeigt th den Inhalt der Tabellenzelle fett und zentriert.
+											</div>
+										</td>
+										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn">+</button></th>
+									</tr>
+									<tr class="tableBody-row" id="row">
+										<td class="tableBody-cell">
+											<div class="table-content">
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+												<div class="table-image">
+													<img class="table-imageIcon" src="../static/images/platzhalter.jpg" />
+													<span class="table-imageCaption">Caption</span>
+												</div>
+											</div>
+										</td>
+										<td class="tableBody-cell">2</td>
+										<td class="tableBody-cell">
+											<div class="table-content">
+												th zeigt die Zellen einer HTML-Tabelle als Tabellenkopf. In Kopfzellen können Überschriften und Informationen über die Spalten oder Zeilen einer Tabelle stehen. Ohne CSS zeigt th den Inhalt der Tabellenzelle fett und zentriert.
+											</div>
+										</td>
+										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn js-openrow">+</button></th>
+									</tr>
+									<tr class="tableBody-row">
+										<td class="tableBody-cell">1</td>
+										<td class="tableBody-cell">2</td>
+										<td class="tableBody-cell">3</td>
+										<th class="tableBody-cell tableInfo-cell"><button class="tableInfo-btn js-openrow">+</button></th>
+									</tr>
+								</tbody>
+							</table>
+
+							<form class="viurForm">
+								<fieldset id="legend" class="vi-set vi-set-vAllgemein" name="Allgemein">
+
+									<legend class="vi-legend">
+										<div class="vi-legendBtn js-openlegend">Allgemein
+										<span class="vi-legendPlus">+</span>
+											</div>
+									</legend>
+
+									<section class="vi-section">
+
+										<div class="vi-bone vi-stringBone vi-stringBone-vName">
+											<label class="label vi-label vi-stringLabel vi-stringLabel-vName is-required"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_name">Name</label>
+											<div class="vi-boneTranslator" id="vi_0_db_produkt_edit_Allgemein_bn_name">
+												<div class="vi-boneEditor">
+													<input class="input" type="text" class="lang_de">
+													<input class="input" type="text" class="lang_en"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_fr"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_it"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_ru"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_no"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_se"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_dk"
+														   style="display: none;">
+													<input class="input" type="text" class="lang_nl"
+														   style="display: none;">
+												</div>
+												<select class="select" name="kauftenauch"
+														id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+													<option value="0">de</option>
+													<option value="1">en</option>
+												</select>
+											</div>
+										</div>
+										<div class="vi-bone vi-textBone vi-textBone-vDescr">
+											<label class="label vi-label vi-textLabel vi-textLabel-vDescr"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_descr">Beschreibung</label>
+											<div class="vi-boneTranslator" id="vi_0_db_produkt_edit_Allgemein_bn_descr">
+												<div class="vi-boneEditor">
+													<textarea class="textarea vi-textarea"
+															  style="display: none;"></textarea>
+													<div class="textarea vi-textarea vi-textBone-preview">
+													</div>
+													<button class="btn textedit icon btn-vEdit" type="button">Text
+														bearbeiten
+													</button>
+												</div>
+												<select class="select" name="kauftenauch"
+														id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+													<option value="0">de</option>
+													<option value="1">en</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-fileBone vi-fileBone-vImage">
+											<label class="label vi-label vi-fileLabel vi-fileLabel-vImage"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_image">Bild</label>
+											<div class="vi-boneEditor can-upload"
+												 id="vi_0_db_produkt_edit_Allgemein_bn_image">
+												<div class="vi-file inputGroup">
+													<div class="vi-fileBone-previewImg"
+														 style="background-image: url(https://lh3.googleusercontent.com/TQFr6JDH1tKAHO0fl80hFTCYwooKAuxdxe0wb6kYVadC3vvwQACAVy63p4y47VzEb86vNfKwp7pjBgm-MnwwkxLX=s150)">
+													</div>
+													<span class="input is-readonly">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+													<button class="btn icon edit is-disabled" type="button">Bearbeiten
+													</button>
+													<button class="btn icon cancel btn-vDanger is-disabled"
+															type="button">Entfernen
+													</button>
+												</div>
+												<button class="btn has-icon i-select" type="button">Auswählen</button>
+												<div class="vi-dropzone">
+												</div>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-fileMultiBone vi-fileMultiBone-vImages">
+											<label class="label vi-label vi-fileMultiLabel vi-fileMultiLabel-vImages"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_images">Feature-Bilder</label>
+											<div class="vi-boneEditor can-upload"
+												 id="vi_0_db_produkt_edit_Allgemein_bn_images">
+												<div class="vi-selection">
+													<div class="vi-file inputGroup">
+														<div class="vi-fileMultiBone-previewImg"
+															 style="background-image: url(https://lh3.ggpht.com/_DxEjeyW0oiWYfHUg7g6GIJei67Vqd8B_y-kXOV9tdcTOig-6ON3WLRIGSud51hMp3Crq2BprU9XXi3I4xNiLSCM=s150)">
+														</div>
+														<span class="input is-readonly">Dusch-Bodenelement, Sondermaß 1000-1600 mm_1.jpg</span>
+														<button class="btn icon edit is-disabled" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn icon cancel btn-vDanger is-disabled"
+																type="button">Entfernen
+														</button>
+													</div>
+												</div>
+												<button class="btn has-icon i-select" type="button">Auswählen</button>
+												<div class="vi-dropzone">
+												</div>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-selectOneBone vi-selectOneBone-vKauftenauch">
+											<label class="label vi-label vi-selectOneLabel vi-selectOneLabel-vKauftenauch"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">In "Kauften auch"
+												anzeigen?</label>
+											<div class="vi-boneEditor inputGroup">
+												<select class="select" name="kauftenauch"
+														id="vi_0_db_produkt_edit_Allgemein_bn_kauftenauch">
+													<option value="0">Nein</option>
+													<option value="1">Ja</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-selectMultiBone vi-selectMultiBone-vBeschichtung">
+											<label class="label vi-label vi-selectMultiLabel vi-selectMultiLabel-vBeschichtung"
+												   for="vi_0_db_produkt_edit_Details_bn_beschichtung">Beschichtung</label>
+											<div id="vi_0_db_produkt_edit_Details_bn_beschichtung"
+												 class="vi-boneEditor inputGroup">
+												<div class="radio">
+													<input id="check0" class="radio-input" type="radio" name="radio1">
+													<label for="check0" class="radio-label">Nein</label>
+												</div>
+												<div class="radio">
+													<input id="check1" class="radio-input" type="radio" name="radio1">
+													<label for="check1" class="radio-label">Ja</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-relationalBone relational_serie relational is-related-serie">
+											<label class="label vi-label vi-relationalLabel vi-relationalLabel-vSerie"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_serie">gehört zur
+												Serie</label>
+											<div class="vi-boneEditor" id="vi_0_db_produkt_edit_Allgemein_bn_serie">
+												<div class="vi-relation inputGroup">
+													<input class="input" type="text" readonly="">
+													<button class="btn btn-vEdit has-icon i-edit" type="button">
+														Bearbeiten
+													</button>
+													<button class="btn btn-vDanger has-icon i-cancel" type="button">
+														Entfernen
+													</button>
+												</div>
+												<button class="btn btn-vPrimary has-icon i-select" type="button">
+													Auswählen
+												</button>
+											</div>
+										</div>
+
+										<div class="vi-bone vi-relationalMultiBone vi-relationalMultiBone-vWeitere is-related-produkt">
+											<label class="label vi-label vi-relationalMultiLabel vi-relationalMultiLabel-vWeitere"
+												   for="vi_0_db_produkt_edit_Allgemein_bn_weitere">ähnliche
+												Produkte</label>
+											<div class="vi-boneEditor" id="vi_0_db_produkt_edit_Allgemein_bn_weitere">
+												<div class="vi-selection">
+													<div class="vi-relation inputGroup">
+														<span class="input is-readonly">Badewannenfaltwand, 3-teilig, D1410</span>
+														<button class="btn btn-vEdit has-icon i-edit" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn btn-vDanger has-icon i-cancel" type="button">
+															Entfernen
+														</button>
+													</div>
+													<div class="vi-relation inputGroup">
+														<span class="input is-readonly">Badewannenfaltwand, 3-teilig D1420</span>
+														<button class="btn btn-vEdit has-icon i-edit" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn btn-vDanger has-icon i-cancel" type="button">
+															Entfernen
+														</button>
+													</div>
+													<div class="vi-relation inputGroup">
+														<span class="input is-readonly">Badewannenfaltwand, 3-teilig mit Seitenwand</span>
+														<button class="btn btn-vEdit has-icon i-edit" type="button">
+															Bearbeiten
+														</button>
+														<button class="btn btn-vDanger has-icon i-cancel" type="button">
+															Entfernen
+														</button>
+													</div>
+												</div>
+												<button class="btn btn-vPrimary has-icon i-select" type="button">
+													Auswählen
+												</button>
+											</div>
+										</div>
+
+									</section>
+								</fieldset>
+
+								<fieldset  id="legend" class="vi-set vi-set-vAllgemein is-inactive" name="Allgemein">
+
+									<legend class="vi-legend">
+										<div class="vi-legendBtn js-openlegend">Allgemein 02
+										<span class="vi-legendPlus">+</span>
+											</div>
+									</legend>
+
+									<section class="vi-section">
+
+										affe 02 <br/>affe 02 <br/>affe 02
+
+
+									</section>
+								</fieldset>
+
+							</form>
+						</div>
+
+
+			</div>
+
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
